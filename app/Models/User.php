@@ -24,6 +24,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'whatsapp_number',
         'password',
     ];
 
@@ -48,5 +49,14 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+
+      /**
+     * The medical facilities that the user can access.
+     */
+    public function medicalFacilities()
+    {
+        return $this->belongsToMany(MedicalFacility::class);
     }
 }
