@@ -90,8 +90,23 @@ class MedicalFacilitiesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        
+        $facility = MedicalFacility::find($id);
+
+        if (!$facility) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Medical facility not found'
+            ], 404);
+        }
+
+        // Delete the facility (relationships will be cascade deleted due to foreign key constraint)
+        $facility->delete();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Medical facility deleted successfully'
+        ]);
     }
 }
