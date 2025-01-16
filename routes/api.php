@@ -19,6 +19,13 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
 
 });
 Route::post('medical-facilities', [MedicalFacilitiesController::class, 'store']);
+
+
 Route::get('medical-facilities/{id}', [MedicalFacilitiesController::class, 'show']);
+
+ //Update a medical facility
+Route::put('medical-facilities/{id}', [MedicalFacilitiesController::class, 'update']);
+
+
  // Delete a medical facility
  Route::delete('medical-facilities/{id}', [MedicalFacilitiesController::class, 'destroy']);
