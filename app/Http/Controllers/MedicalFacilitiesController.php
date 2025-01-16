@@ -82,10 +82,60 @@ class MedicalFacilitiesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $facility = MedicalFacility::find($id);
+        logger($request);
+    
+        if (!$facility) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Medical facility not found'
+            ], 404);
+        }
+    
+        // Use the same validation rules as store, but  optional for update
+        $validator = Validator::make($request->all(), [
+            'user_id' => 'sometimes|exists:users,id',
+            'name' => 'sometimes|string|max:255',
+            'address' => 'sometimes|string',
+            'whatsapp_number' => 'sometimes|string|max:12',
+            'email' => 'nullable|email',
+            'description' => 'sometimes|string',
+            'operating_hours' => 'nullable|json',
+            'latitude' => 'nullable|numeric|between:-90,90',
+            'longitude' => 'nullable|numeric|between:-180,180',
+            'status' => 'sometimes|in:Open,Closed',
+            'units' => 'sometimes|array|max:255',
+            'units.*' => 'string'
+        ]);
+    
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'errors' => $validator->errors()
+            ], 422);
+        }
+    
+        // Get validated data
+        $validatedData = $validator->validated();
+    
+        // Handle units separately if they exist in the request
+        if (isset($validatedData['units'])) {
+            $validatedData['units'] = json_encode($request->units);
+        }
+    
+        // Update only the fields that were provided in the request
+        $facility->update($validatedData);
+        // $facility->save();
+    
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Medical facility updated successfully',
+            'data' => $facility->load(['users'])
+        ]);
     }
+
 
     /**
      * Remove the specified resource from storage.
