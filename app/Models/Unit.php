@@ -6,7 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Unit extends Model
 {
-    public $table = 'medical_facilty_units';
+
+    protected $fillable = [
+        'facility_id',
+        'name',
+        'description',
+        'specialization',
+        'status'
+    ];
+
+
+    public $table = 'medical_facility_units';
     /**
      * The medical facilities that belong to this unit.
      */
