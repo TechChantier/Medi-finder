@@ -49,7 +49,7 @@ class MedicalFacilitiesUnitController extends Controller
             'data' => $unit
         ], 201);
 
-        logger($unit);
+        // logger($unit);
     }
 
     /**
