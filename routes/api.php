@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController; 
 use App\Http\Controllers\MedicalFacilitiesController; 
+use App\Http\Controllers\MedicalFacilitiesUnitController; 
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -28,4 +29,13 @@ Route::put('medical-facilities/{id}', [MedicalFacilitiesController::class, 'upda
 
 
  // Delete a medical facility
- Route::delete('medical-facilities/{id}', [MedicalFacilitiesController::class, 'destroy']);
+Route::delete('medical-facilities/{id}', [MedicalFacilitiesController::class, 'destroy']);
+
+Route::post('medical-facilities/{facility_id}/units', [MedicalFacilitiesUnitController::class, 'store']);
+
+
+Route::delete('medical-facilities/{facility_id}/units/{id}', [MedicalFacilitiesUnitController::class, 'destroy']);
+
+Route::get('medical-facilities/{facility_id}/units/{id}', [MedicalFacilitiesUnitController::class, 'show']);
+
+Route::put('medical-facilities/{facility_id}/units/{id}', [MedicalFacilitiesUnitController::class, 'update']);
