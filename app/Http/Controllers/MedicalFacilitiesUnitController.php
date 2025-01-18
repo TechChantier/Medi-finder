@@ -49,8 +49,9 @@ class MedicalFacilitiesUnitController extends Controller
             'data' => $unit
         ], 201);
 
-        // logger($unit);
+        
     }
+
 
     /**
      * Display the specified unit.
