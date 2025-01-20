@@ -23,8 +23,12 @@ class MedicalFacilitiesUnitController extends Controller
     /**
      * Store a newly created unit.
      */
-    public function store(Request $request)
-    {
+   /**
+ * Store a newly created unit.
+ */
+public function store(Request $request)
+{
+    try {
         $validator = Validator::make($request->all(), [
             'facility_id' => 'required|exists:medical_facilities,id',
             'name' => 'required|string|max:255',
@@ -41,7 +45,6 @@ class MedicalFacilitiesUnitController extends Controller
         }
 
         $unit = Unit::create($request->all());
-        
 
         return response()->json([
             'success' => true,
@@ -49,9 +52,20 @@ class MedicalFacilitiesUnitController extends Controller
             'data' => $unit
         ], 201);
 
-        
+    } catch (\Illuminate\Database\QueryException $e) {
+        return response()->json([
+            'success' => false,
+            'message' => 'Database error occurred',
+            'error' => $e->getMessage()
+        ], 500);
+    } catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'message' => 'An error occurred while creating the unit',
+            'error' => $e->getMessage()
+        ], 500);
     }
-
+}
 
     /**
      * Display the specified unit.
