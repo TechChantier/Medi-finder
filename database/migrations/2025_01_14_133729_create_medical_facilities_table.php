@@ -23,8 +23,6 @@ return new class extends Migration
             $table->json('operating_hours')->nullable();
             $table->text('services')->nullable();
             $table->json('units');
-            $table->decimal('latitude', 10, 8)->nullable();
-            $table->decimal('longitude', 11, 8)->nullable();
             $table->enum('status', ['Open', 'Closed'])->default('Open');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
