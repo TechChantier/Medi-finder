@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\MedicalFacility;
-use Illuminate\Support\Facades\Log;
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Validation\ValidationException;
@@ -47,8 +46,7 @@ class MedicalFacilitiesController extends Controller
                 'email' => 'nullable|email',
                 'description' => 'required|string',
                 'operating_hours' => 'nullable|json',
-                'latitude' => 'nullable|numeric|between:-90,90',
-                'longitude' => 'nullable|numeric|between:-180,180',
+                'image' => 'nullable|string',
                 'status' => 'required|in:Open,Closed',
                 'units' => 'required|array|max:255',
                 'units.*' => 'string'
@@ -127,8 +125,7 @@ class MedicalFacilitiesController extends Controller
                 'email' => 'nullable|email',
                 'description' => 'sometimes|string',
                 'operating_hours' => 'nullable|json',
-                'latitude' => 'nullable|numeric|between:-90,90',
-                'longitude' => 'nullable|numeric|between:-180,180',
+                'image' => 'nullable|string',
                 'status' => 'sometimes|in:Open,Closed',
                 'units' => 'sometimes|array|max:255',
                 'units.*' => 'string'
