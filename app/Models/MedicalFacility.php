@@ -20,8 +20,7 @@ class MedicalFacility extends Model
         'description',
         'operating_hours',
         'services',
-        'latitude',
-        'longitude',
+        'image',
         'status',
         'units'
     ];

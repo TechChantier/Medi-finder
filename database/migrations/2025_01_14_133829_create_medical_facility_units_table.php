@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('facility_id')->constrained('medical_facilities')->onDelete('cascade');
             $table->string('name');
+            $table->string('image')->nullable();
             $table->text('description')->nullable();
             $table->string('specialization')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');

@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 
 use Laravel\Sanctum\HasApiTokens;
 
@@ -26,6 +27,7 @@ class User extends Authenticatable
         'email',
         'whatsapp_number',
         'password',
+        'image'
     ];
 
     /**
@@ -58,5 +60,14 @@ class User extends Authenticatable
     public function medicalFacilities()
     {
         return $this->belongsToMany(MedicalFacility::class);
+    }
+
+    public function getImageUrlAttribute()
+    {
+        if ($this->image && Storage::disk('public')->exists($this->image)) {
+            return Storage::url($this->image);
+        }
+        
+        return Storage::url('images/default-image.jpg');
     }
 }
