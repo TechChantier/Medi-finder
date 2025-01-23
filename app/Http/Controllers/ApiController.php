@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Log;
 
 
 class ApiController extends Controller
@@ -80,7 +81,7 @@ class ApiController extends Controller
                 $fileName = time() . '_' . Str::random(10) . '.' . $image->getClientOriginalExtension();
                 
                 // Store in public/storage/profile-images
-                $imagePath = $image->storeAs('profile-images', $fileName, 'public');
+                $imagePath = $image->storeAs('images', $fileName, 'public');
             }
     
             $user = User::create([
@@ -114,24 +115,57 @@ class ApiController extends Controller
         }
     }
     
+
     public function logout(Request $request)
-    {
-        try {
-            $request->user()->currentAccessToken()->delete();
-            
-            return response()->json([
-                'status' => 'success',
-                'message' => 'Successfully logged out'
-            ]);
-            
-        } catch (\Exception $e) {
+{
+    try {
+        // Get the current authenticated user
+        $user = $request->user();
+
+        // Check if a user is authenticated
+        if (!$user) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Logout failed',
-                'error' => $e->getMessage()
-            ], 500);
+                'message' => 'No authenticated user found'
+            ], 401);
         }
+
+        // Delete all tokens for the user
+        $user->tokens()->delete();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Successfully logged out from all devices'
+        ]);
+    } catch (\Exception $e) {
+        // Log the error for debugging
+        Log::error('Logout error: ' . $e->getMessage());
+
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Logout failed',
+            'error' => $e->getMessage()
+        ], 500);
     }
+}
+    // public function logout(Request $request)
+    // {
+    //     try {
+    //         $request->user()->currentAccessToken()->delete();
+            
+    //         return response()->json([
+    //             'status' => 'success',
+    //             'message' => 'Successfully logged out'
+    //         ]);
+            
+    //     } catch (\Exception $e) {
+    //         return response()->json([
+    //             'status' => 'error',
+    //             'message' => 'Logout failed',
+    //             'error' => $e->getMessage()
+    //         ], 500);
+    //     }
+    // }
 
     public function user(Request $request)
     {
