@@ -2,25 +2,26 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
 
-use Laravel\Sanctum\HasApiTokens;
-
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasApiTokens, HasFactory, Notifiable;
-
-    
-
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
+     * User types available in the system
+     * @var array
+     */
+    const USER_TYPES = [
+        'medical_facility' => 'medical_facility',
+        'finder' => 'finder'
+    ];
+    /**
+     * Mass assignable attributes
      */
     protected $fillable = [
         'name',
@@ -30,45 +31,43 @@ class User extends Authenticatable
         'image',
         'user_type'
     ];
-
     /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
+     * Hidden attributes from serialization
      */
     protected $hidden = [
         'password',
         'remember_token',
     ];
-
     /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
+     * Attribute casting
      */
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
-    }
-
-
-      /**
-     * The medical facilities that the user can access.
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+    ];
+    /**
+     * A user of type medical_facility has one medical facility
+     * This establishes a one-to-one relationship
      */
-    public function medicalFacilities()
+    public function medicalFacility()
     {
-        return $this->belongsToMany(MedicalFacility::class);
+        return $this->hasOne(MedicalFacility::class);
     }
-
-    public function getImageUrlAttribute()
+    /**
+     * Check if user is a medical facility
+     */
+    public function isMedicalFacility(): bool
+    {
+        return $this->user_type === self::USER_TYPES['medical_facility'];
+    }
+    /**
+     * Get image URL with fallback to default
+     */
+    public function getImageUrlAttribute(): string
     {
         if ($this->image && Storage::disk('public')->exists($this->image)) {
             return Storage::url($this->image);
         }
-        
         return Storage::url('images/default-image.jpg');
     }
 }
