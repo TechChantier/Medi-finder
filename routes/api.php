@@ -11,15 +11,15 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('login', [ApiController::class, 'login']);
-Route::post('register', [ApiController::class, 'register']);
+Route::post('auth/login', [ApiController::class, 'login']);
+Route::post('auth/register', [ApiController::class, 'register']);
 
 
 Route::group(['middleware' => 'auth:sanctum'], function(){
 
-    Route::post('logout', [ApiController::class, 'logout']);
+    Route::post('auth/logout', [ApiController::class, 'logout']);
 
-    Route::get('user', [ApiController::class, 'user']);
+    Route::get('auth/user', [ApiController::class, 'user']);
 
     Route::post('medical-facilities', [MedicalFacilitiesController::class, 'store']);
 
