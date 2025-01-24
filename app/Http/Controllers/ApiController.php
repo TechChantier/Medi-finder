@@ -2,15 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SignupUserRequest;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Log;
 
 
+/**
+ * @group User Management
+ * 
+ * APIs to manage the user Authentication.
+ */
 class ApiController extends Controller
 {
     public function login(Request $request)
@@ -46,7 +54,7 @@ class ApiController extends Controller
                 'token' => $token,
                 'user' => $user,
                 'image_url' => $user->image ? asset('storage/' . $user->image) : null
-            ]);
+            ], 200);
 
         } catch (\Exception $e) {
             return response()->json([
@@ -57,62 +65,24 @@ class ApiController extends Controller
         }
     }
 
-    public function register(Request $request)
+    public function register(SignupUserRequest $request)
     {
-        try {
-            $validator = Validator::make($request->all(), [
-                'name' => 'required|string|between:2,100',
-                'email' => 'required|string|email|max:100|unique:users',
-                'whatsapp_number' => 'required|string|max:12|unique:users',
-                'password' => 'required|string|confirmed|min:6',
-                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048' // max 2MB
-            ]);
-    
-            if ($validator->fails()) {
-                return response()->json([
-                    'message' => $validator->errors()->first()
-                ], 401);
-            }
-    
-            // Handle image upload
-            $imagePath = null;
-            if ($request->hasFile('image')) {
-                $image = $request->file('image');
-                $fileName = time() . '_' . Str::random(10) . '.' . $image->getClientOriginalExtension();
-                
-                // Store in public/storage/profile-images
-                $imagePath = $image->storeAs('images', $fileName, 'public');
-            }
-    
-            $user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'whatsapp_number' => $request->whatsapp_number,
-                'password' => bcrypt($request->password),
-                'image' => $imagePath // Save the image path to database
-            ]);
-    
-            $tokenResult = $user->createToken('Personal Access Token');
-            $token = $tokenResult->plainTextToken;
-    
-            return response()->json([
-                'message' => 'User successfully registered!',
-                'token' => $token,
-                'user' => $user,
-                'image_url' => $imagePath ? Storage::url($imagePath) : null
-            ]);
-    
-        } catch (\Exception $e) {
-            // Delete uploaded image if user creation fails
-            if (isset($imagePath) && Storage::disk('public')->exists($imagePath)) {
-                Storage::disk('public')->delete($imagePath);
-            }
-    
-            return response()->json([
-                'message' => 'Registration failed',
-                'error' => $e->getMessage()
-            ], 500);
-        }
+
+        $validatedFields = $request->validated();
+
+        $user = User::create([
+          'email'=> $validatedFields['email'],
+          'name' => $validatedFields['name'],
+          'password'=> Hash::make($validatedFields['password']),
+          'whatsapp_number'=> $validatedFields['whatsapp_number'],
+          'user_type' => $validatedFields['user_type'],
+          'image' => $validatedFields['image'],
+        ]);
+
+        return response()->json([
+            'message' => 'User created successfully',
+            'user' => new UserResource($user)
+        ], 201);
     }
     
 
@@ -135,8 +105,8 @@ class ApiController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Successfully logged out from all devices'
-        ]);
+            'message' => 'Successfully logged out.'
+        ], 200);
     } catch (\Exception $e) {
         // Log the error for debugging
         Log::error('Logout error: ' . $e->getMessage());
@@ -176,7 +146,7 @@ class ApiController extends Controller
                 'status' => 'success',
                 'user' => $user,
                 'image_url' => $user->image ? asset('storage/' . $user->image) : null
-            ]);
+            ], 200);
             
         } catch (\Exception $e) {
             return response()->json([
