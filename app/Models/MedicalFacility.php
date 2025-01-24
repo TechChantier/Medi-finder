@@ -3,40 +3,40 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\BelongsTo;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class MedicalFacility extends Model
 {
-    use HasFactory;
-
-    protected $fillable = [
-        'user_id',       // Add this line
-        'name',
-        'address',
-        'whatsapp_number',
-        'email',
-        'description',
-        'operating_hours',
-        'services',
-        'image',
-        'status',
-        'units'
+    /**
+     * Status constants for facility
+     */
+    const STATUS = [
+        'Open' => 'Open',
+        'Closed' => 'Closed'
     ];
-
-    
-    public function users()
+    /**
+     * Mass assignable fields
+     */
+    protected $fillable = [
+        'user_id',
+        'address',
+        'description',
+        'operating_hours', // JSON array of operating hours
+        'status',         // Open/Closed
+        'units'          // JSON array of units
+    ];
+    /**
+     * Cast fields to appropriate types
+     */
+    protected $casts = [
+        'units' => 'array',           // Cast units to PHP array
+        'operating_hours' => 'array'  // Cast operating hours to PHP array
+    ];
+    /**
+     * Get the user that owns this facility
+     */
+    public function user(): BelongsTo
     {
-        return $this->belongsToMany(User::class);
-    }
-
-    public function medical_facility_units()
-    {
-        return $this->belongsToMany(Unit::class);
+        return $this->belongsTo(User::class);
     }
 }
-
-
-
-

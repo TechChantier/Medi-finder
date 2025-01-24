@@ -15,12 +15,9 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('user_id');
-            $table->string('name');
             $table->text('address');
-            $table->string('whatsapp_number', 12);
-            $table->string('email')->nullable();
             $table->text('description');
-            $table->json('operating_hours')->nullable();
+            $table->string('operating_hours')->nullable();
             $table->text('services')->nullable();
             $table->json('units');
             $table->enum('status', ['Open', 'Closed'])->default('Open');
