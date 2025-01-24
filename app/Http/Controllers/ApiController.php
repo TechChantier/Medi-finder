@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\SignupUserRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Log;
-
+use Illuminate\Validation\ValidationException;
 
 /**
  * @group User Management
@@ -21,53 +22,31 @@ use Illuminate\Support\Facades\Log;
  */
 class ApiController extends Controller
 {
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
-        try {
-            $validator = Validator::make($request->all(), [
-                'email' => 'required|email',
-                'password' => 'required|string|min:6'
-            ]);
+        $validatedFields = $request->validated();
 
-            if ($validator->fails()) {
-                return response()->json([
-                    'status' => 'error',
-                    'message' => $validator->errors()->first()
-                ], 401);
-            }
+        $user = User::where("email", $validatedFields["email"])->first();
 
-            $credentials = $request->only('email', 'password');
-
-            if (!Auth::guard('web')->attempt($credentials)) {
-                return response()->json([
-                    'status' => 'error',
-                    'message' => 'Unauthorized, check your login credentials'
-                ], 401);
-            }
-
-            $user = Auth::user();
-            $tokenResult = $user->createToken('Personal Access Token');
-            $token = $tokenResult->plainTextToken;
-
-            return response()->json([
-                'status' => 'success',
-                'token' => $token,
-                'user' => $user,
-                'image_url' => $user->image ? asset('storage/' . $user->image) : null
-            ], 200);
-
-        } catch (\Exception $e) {
-            return response()->json([
-                'status' => 'error',
-                'message' => 'Login failed',
-                'error' => $e->getMessage()
-            ], 500);
+        if (!$user) {
+            throw ValidationException::withMessages(["email"=> ['Email is incorrect!']]);
         }
+
+        if (!Hash::check($request->password, $user->password)) {
+            throw ValidationException::withMessages([
+                'email' => ['The provided credentials are incorrect']
+            ]);
+        }        $token = $user->createToken('api-token')->plainTextToken;        
+        return response()->json([
+            'token' => $token ,
+            'authenticated user' => new UserResource($user)
+        ]);
+    
     }
 
     public function register(SignupUserRequest $request)
     {
-
+            // logger($request);
         $validatedFields = $request->validated();
 
         $user = User::create([
@@ -78,82 +57,32 @@ class ApiController extends Controller
           'user_type' => $validatedFields['user_type'],
           'image' => $validatedFields['image'],
         ]);
-
+            logger($user);
         return response()->json([
             'message' => 'User created successfully',
             'user' => new UserResource($user)
         ], 201);
     }
     
-
+       /**
+     * Logout User
+     *
+     * Invalidate user's access token.
+     *
+     * @authenticated
+     *
+     * @response {
+     *  "message": "You are Logged out Successfully"
+     * }
+     */
     public function logout(Request $request)
-{
-    try {
-        // Get the current authenticated user
-        $user = $request->user();
-
-        // Check if a user is authenticated
-        if (!$user) {
-            return response()->json([
-                'status' => 'error',
-                'message' => 'No authenticated user found'
-            ], 401);
-        }
-
-        // Delete all tokens for the user
-        $user->tokens()->delete();
-
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Successfully logged out.'
-        ], 200);
-    } catch (\Exception $e) {
-        // Log the error for debugging
-        Log::error('Logout error: ' . $e->getMessage());
-
-        return response()->json([
-            'status' => 'error',
-            'message' => 'Logout failed',
-            'error' => $e->getMessage()
-        ], 500);
-    }
-}
-    // public function logout(Request $request)
-    // {
-    //     try {
-    //         $request->user()->currentAccessToken()->delete();
-            
-    //         return response()->json([
-    //             'status' => 'success',
-    //             'message' => 'Successfully logged out'
-    //         ]);
-            
-    //     } catch (\Exception $e) {
-    //         return response()->json([
-    //             'status' => 'error',
-    //             'message' => 'Logout failed',
-    //             'error' => $e->getMessage()
-    //         ], 500);
-    //     }
-    // }
-
-    public function user(Request $request)
     {
-        try {
-            $user = $request->user();
-            
-            return response()->json([
-                'status' => 'success',
-                'user' => $user,
-                'image_url' => $user->image ? asset('storage/' . $user->image) : null
-            ], 200);
-            
-        } catch (\Exception $e) {
-            return response()->json([
-                'status' => 'error',
-                'message' => 'Failed to fetch user details',
-                'error' => $e->getMessage()
-            ], 500);
-        }
+        $request->user()->tokens()->delete();        
+        return response()->json([
+            'message' => 'You are Logged out Successfully'
+        ]);
     }
+
+    
+    
 }
