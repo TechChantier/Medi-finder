@@ -16,7 +16,7 @@ class UnitResource extends JsonResource
     {
         return [
             'type' => 'units',
-            'id' => (string)$this->id,
+            'id' => $this->id,
             'attributes' => [
                 'name' => $this->name,
                 'description' => $this->description,

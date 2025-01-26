@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Unit extends Model
 {
     use HasFactory;
+
+    protected $table = 'medical_facility_units';
     protected $fillable = [
+        'facility_id',
         'name',
         'description',
         'status'

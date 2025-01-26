@@ -11,10 +11,11 @@ class StoreUnitRequest extends FormRequest
     {
         return auth()->user()->isMedicalFacility();
     }
+
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255', 'unique:units'],
+            'name' => ['required', 'string', 'max:255', 'unique:medical_facility_units'],
             'description' => ['required', 'string'],
             'status' => [
                 'required',

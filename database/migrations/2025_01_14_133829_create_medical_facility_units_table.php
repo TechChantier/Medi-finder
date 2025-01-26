@@ -13,12 +13,16 @@ return new class extends Migration
     {
         Schema::create('medical_facility_units', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('facility_id')->constrained('medical_facilities')->onDelete('cascade');
+            $table->unsignedBigInteger('facility_id');
             $table->string('name');
             $table->string('image')->nullable();
             $table->text('description')->nullable();
             $table->string('specialization')->nullable();
-            $table->enum('status', ['Open', 'Closed'])->default('Open');
+            $table->enum('status', ['Active', 'Inactive'])->default('Active');
+
+
+            $table->foreign('facility_id')->references('id')->on('medical_facilities')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
