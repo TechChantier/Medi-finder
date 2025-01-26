@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\MedicalFacility;
 use App\Http\Resources\MedicalFacilityResource;
+use App\Http\Requests\UpdateMedicalFacilityRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 
@@ -37,6 +38,9 @@ class MedicalFacilityController extends Controller
             ]
         ]);
     }
+
+
+
     /**
      * Show single medical facility details
      *
@@ -46,11 +50,14 @@ class MedicalFacilityController extends Controller
     public function show(MedicalFacility $facility): JsonResponse
     {
         // Eager load relationships
-        $facility->load(['user', 'units']);
+        $facility->load(['user']);
         return response()->json([
             'data' => new MedicalFacilityResource($facility)
         ]);
     }
+
+
+
     /**
      * Delete a medical facility and its relationships
      *
@@ -75,6 +82,36 @@ class MedicalFacilityController extends Controller
             ]);
             return response()->json([
                 'message' => 'Failed to delete facility'
+            ], 500);
+        }
+    }
+
+
+    /**
+     * Update medical facility information
+     */
+    public function update(UpdateMedicalFacilityRequest $request): JsonResponse
+    {
+        try {
+            DB::beginTransaction();
+            $facility = $request->user()->medicalFacility;
+            $facility->update($request->validated());
+            if ($request->has('units')) {
+                $facility->units()->sync($request->units);
+            }
+            DB::commit();
+            return response()->json([
+                'message' => 'Facility updated successfully',
+                'data' => new MedicalFacilityResource($facility)
+            ]);
+        } catch (\Exception $e) {
+            DB::rollBack();
+            logger()->error('Failed to update facility', [
+                'error' => $e->getMessage(),
+                'user_id' => $request->user()->id
+            ]);
+            return response()->json([
+                'message' => 'Failed to update facility'
             ], 500);
         }
     }

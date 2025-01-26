@@ -29,7 +29,7 @@ class AuthController extends Controller
             ]);
         }
         return response()->json([
-            'message' => 'User successfully registered',
+            'message' => 'User login successfully ',
             'user' => new UserResource($user)
         ]);
     }
@@ -78,51 +78,7 @@ class AuthController extends Controller
             return response()->json(['message' => 'Registration failed. ' . $e->getMessage()], 500);
         }
     }
-    // public function register(SignupUserRequest $request): JsonResponse
-    // {
-    //     try {
-    //         DB::beginTransaction();            // Create base user
-    //         $userData = [
-    //             'name' => $request->name,
-    //             'email' => $request->email,
-    //             'password' => Hash::make($request->password),
-    //             'whatsapp_number' => $request->whatsapp_number,
-    //             'user_type' => $request->user_type
-    //         ];            // Handle optional image upload
-    //         if ($request->hasFile('image')) {
-    //             $path = $request->file('image')->store('users', 'public');
-    //             $userData['image'] = $path;
-    //         }
-    //         $user = User::create($userData);            // If registering as medical facility
-    //         if ($request->user_type === User::USER_TYPES['medical_facility']) {
-    //             $medicalFacilityData = [
-    //                 'address' => $request->address,
-    //                 'description' => $request->description,
-    //                 'operating_hours' => $request->operating_hours,
-    //                 'status' => $request->status,
-    //                 'units' => json_encode($request->units ?? [])
-    //             ];
-    //             $user->medicalFacility()->create($medicalFacilityData);                // Attach units if provided
 
-    //         }
-    //         $token = $user->createToken('api-token')->plainTextToken;
-    //         DB::commit();
-    //         return response()->json([
-    //             'message' => 'Registration successful',
-    //             'token' => $token,
-    //             'user' => new UserResource($user->load('medicalFacility.units'))
-    //         ], 201);
-    //     } catch (\Exception $e) {
-    //         DB::rollBack();
-    //         logger()->error('Registration failed', [
-    //             'error' => $e->getMessage(),
-    //             'data' => $request->except('password')
-    //         ]);
-    //         return response()->json([
-    //             'message' => 'Registration failed. ' . $e->getMessage()
-    //         ], 500);
-    //     }
-    // }
     /**
      * Handle user logout
      */
