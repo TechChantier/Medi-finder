@@ -26,7 +26,7 @@ class MedicalFacilityController extends Controller
     public function index(): JsonResponse
     {
         // Eager load relationships to avoid N+1 queries
-        $facilities = MedicalFacility::with(['user', 'units'])
+        $facilities = MedicalFacility::with(['user'])
             ->paginate(config('pagination.per_page', 15));
         return response()->json([
             'data' => MedicalFacilityResource::collection($facilities),
@@ -68,7 +68,6 @@ class MedicalFacilityController extends Controller
     {
         try {
             DB::beginTransaction();            // Remove relationship records first
-            $facility->units()->detach();            // Delete the facility
             $facility->delete();
             DB::commit();
             return response()->json([
