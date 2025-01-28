@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SearchRequest;
 use App\Models\MedicalFacility;
 use App\Http\Resources\MedicalFacilityResource;
 use App\Http\Requests\UpdateMedicalFacilityRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class MedicalFacilityController extends Controller
 {
@@ -16,8 +18,81 @@ class MedicalFacilityController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:sanctum')->except(['index', 'show']);
+        $this->middleware('auth:sanctum')->except(['index', 'show', 'search']);
     }
+
+
+
+    /**
+     * Perform a general search across medical facilities
+     *
+     * @param SearchRequest $request The validated search request
+     * @return JsonResponse Paginated list of matching facilities
+     */
+
+    public function search(SearchRequest $request): JsonResponse
+    {
+        try {
+            // Get the validated search query
+            $query = $request->input('query', '');
+
+            // Log the search query
+            Log::info('Search query:', ['query' => $query]);
+
+            // Base query
+            $facilitiesQuery = MedicalFacility::query();
+
+            if (!empty($query)) {
+                $facilitiesQuery->where(function ($q) use ($query) {
+                    $q->where('address', 'like', "%{$query}%")
+                        ->orWhere('description', 'like', "%{$query}%")
+                        ->orWhere('services', 'like', "%{$query}%")
+                        ->orWhere('status', 'like', "%{$query}%");
+
+                    // Only try JSON search if query is not empty
+                    if ($query) {
+                        $q->orWhereJsonContains('units', $query);
+                    }
+                });
+            }
+
+            // Eager load relationships
+            $facilitiesQuery->with(['user']);
+
+            // Get paginated results
+            $facilities = $facilitiesQuery->paginate(
+                config('pagination.per_page', 15)
+            );
+
+            // Log the results count
+            // Log::info('Search results:', [
+            //     'count' => $facilities->count(),
+            //     'total' => $facilities->total()
+            // ]);
+
+            return response()->json([
+                'data' => MedicalFacilityResource::collection($facilities),
+                'meta' => [
+                    'total' => $facilities->total(),
+                    'per_page' => $facilities->perPage(),
+                    'current_page' => $facilities->currentPage(),
+                    'last_page' => $facilities->lastPage(),
+                ],
+            ]);
+        } catch (\Exception $e) {
+            Log::error('Search error:', [
+                'message' => $e->getMessage(),
+                // 'trace' => $e->getTraceAsString()
+            ]);
+
+            return response()->json([
+                'error' => 'An error occurred while searching',
+                'message' => $e->getMessage(),
+                // 'debug' => config('app.debug') ? $e->getTraceAsString() : null
+            ], 500);
+        }
+    }
+
     /**
      * List all medical facilities with pagination
      *
