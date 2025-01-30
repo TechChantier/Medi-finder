@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "01f8a2f1-c25d-478f-8471-02e9bd1d576f",
+        "_postman_id": "ba5ce6cc-3a2c-436e-b7c0-5609219bb950",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -20,498 +20,7 @@
             "description": "",
             "item": [
                 {
-                    "name": "GET api\/user",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/user",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/user"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/medical-facilities",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/medical-facilities"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store a newly created unit.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/medical-facilities\/:facility_id\/units",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/medical-facilities\/:facility_id\/units",
-                            "variable": [
-                                {
-                                    "id": "facility_id",
-                                    "key": "facility_id",
-                                    "value": "suscipit",
-                                    "description": "The ID of the facility."
-                                }
-                            ]
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/medical-facilities\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/medical-facilities\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "eos",
-                                    "description": "The ID of the medical facility."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update the specified unit.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/medical-facilities\/:facility_id\/units\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/medical-facilities\/:facility_id\/units\/:id",
-                            "variable": [
-                                {
-                                    "id": "facility_id",
-                                    "key": "facility_id",
-                                    "value": "ab",
-                                    "description": "The ID of the facility."
-                                },
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "11",
-                                    "description": "The ID of the unit."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"name\":\"euxymhlfftcocxkjawzhjg\",\"description\":\"Fugiat ut soluta voluptas enim dolores velit deserunt.\",\"specialization\":\"aqqcgqzvdrqozcekkn\",\"status\":\"active\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/medical-facilities\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/medical-facilities\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "quis",
-                                    "description": "The ID of the medical facility."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Remove the specified unit.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/medical-facilities\/:facility_id\/units\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/medical-facilities\/:facility_id\/units\/:id",
-                            "variable": [
-                                {
-                                    "id": "facility_id",
-                                    "key": "facility_id",
-                                    "value": "ut",
-                                    "description": "The ID of the facility."
-                                },
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "17",
-                                    "description": "The ID of the unit."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Search medical facilities with various filters",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/medical-facilities\/search",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/medical-facilities\/search"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Filter medical facilities based on various criteria",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/medical-facilities\/filter",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/medical-facilities\/filter"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Display the specified medical facility.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/medical-facilities\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/medical-facilities\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "qui",
-                                    "description": "The ID of the medical facility."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 404,
-                            "body": "{\"status\":\"error\",\"message\":\"Medical facility not found\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Display the specified unit.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/medical-facilities\/:facility_id\/units\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/medical-facilities\/:facility_id\/units\/:id",
-                            "variable": [
-                                {
-                                    "id": "facility_id",
-                                    "key": "facility_id",
-                                    "value": "1",
-                                    "description": "The ID of the facility."
-                                },
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "20",
-                                    "description": "The ID of the unit."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 500,
-                            "body": "{\n    \"message\": \"Server Error\"\n}",
-                            "name": ""
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "User Management",
-            "description": "\nAPIs to manage the user Authentication.",
-            "item": [
-                {
-                    "name": "POST api\/auth\/login",
+                    "name": "Handle user login",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -530,7 +39,10 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"feeney.zachery@example.net\",\"password\":\">Z?bUng}k+vvsn|BRi(Y\"}"
+                        },
                         "description": "",
                         "auth": {
                             "type": "noauth"
@@ -539,7 +51,7 @@
                     "response": []
                 },
                 {
-                    "name": "POST api\/auth\/register",
+                    "name": "Handle user registration with medical facility support",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -551,14 +63,53 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "name",
+                                    "value": "yjjonykvaljnpnnuuycvllrvgouuhlxjrdnwjpsfcdpgvrjoutiuxey",
+                                    "type": "text",
+                                    "description": "Must be at least 4 characters."
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "wschultz@example.com",
+                                    "type": "text",
+                                    "description": "Must be a valid email address."
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "M,Q@1)nh;irt:Ko==F!}",
+                                    "type": "text",
+                                    "description": "Must be at least 6 characters."
+                                },
+                                {
+                                    "key": "user_type",
+                                    "value": "medical_facility",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "whatsapp_number",
+                                    "value": "minima",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "image",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
                         "description": "",
                         "auth": {
                             "type": "noauth"
@@ -567,7 +118,7 @@
                     "response": []
                 },
                 {
-                    "name": "POST api\/auth\/logout",
+                    "name": "Handle user logout",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -595,13 +146,13 @@
                     "response": []
                 },
                 {
-                    "name": "GET api\/auth\/user",
+                    "name": "Get authenticated user profile",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/auth\/user",
+                            "path": "api\/auth\/profile",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/auth\/user"
+                            "raw": "{{baseUrl}}\/api\/auth\/profile"
                         },
                         "method": "GET",
                         "header": [
@@ -638,6 +189,446 @@
                             ],
                             "code": 401,
                             "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update medical facility information",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/medical-facilities\/:facility",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/medical-facilities\/:facility",
+                            "variable": [
+                                {
+                                    "id": "facility",
+                                    "key": "facility",
+                                    "value": "maiores",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"address\":\"fyclqvnijuuusedali\",\"description\":\"Animi porro voluptatem adipisci ipsa.\",\"operating_hours\":[{\"day\":\"wednesday\",\"open\":\"14:15\",\"close\":\"14:15\"}],\"status\":\"inactive\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete a medical facility and its relationships",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/medical-facilities\/:facility_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/medical-facilities\/:facility_id",
+                            "variable": [
+                                {
+                                    "id": "facility_id",
+                                    "key": "facility_id",
+                                    "value": "1",
+                                    "description": "The ID of the facility."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "List all medical units with pagination",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/units",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/units"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/units",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/units",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/units"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"vhtrnikfl\",\"description\":\"Sequi et odit et.\",\"status\":\"inactive\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Show single unit details",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/units\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/units\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "13",
+                                    "description": "The ID of the unit."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update existing unit",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/units\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/units\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "9",
+                                    "description": "The ID of the unit."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"qwtlxzcftjjhh\",\"description\":\"Sapiente placeat deleniti rerum quasi harum nulla.\",\"status\":\"inactive\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete a unit",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/units\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/units\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "9",
+                                    "description": "The ID of the unit."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Perform a general search across medical facilities",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/medical-facilities\/search",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/medical-facilities\/search"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"query\":\"foqwbmcpjprnfwkautjcwqlacenmmltvzrbgzyuuswexwbmdripkzmzkzanlbbthj\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[],\"meta\":{\"total\":0,\"per_page\":15,\"current_page\":1,\"last_page\":1}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "List all medical facilities with pagination",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/medical-facilities",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/medical-facilities"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":1,\"address\":\"Test Address\",\"description\":\"Test Description\",\"operating_hours\":[{\"day\":\"monday\",\"open\":true,\"close\":false}],\"status\":\"Open\",\"created_at\":\"2025-01-27T23:44:12.000000Z\",\"updated_at\":\"2025-01-27T23:44:12.000000Z\",\"user\":{\"id\":2,\"name\":\"solidarity Facility\",\"email\":\"solidarity@facility.com\",\"whatsapp_number\":\"678678\",\"user_type\":\"medical_facility\",\"medical_facility\":{\"id\":1,\"address\":\"Test Address\",\"description\":\"Test Description\",\"operating_hours\":[{\"day\":\"monday\",\"open\":true,\"close\":false}],\"status\":\"Open\",\"units\":[\"Pediatrics\",\"Emergency\"],\"created_at\":\"2025-01-27T23:44:12.000000Z\",\"updated_at\":\"2025-01-27T23:44:12.000000Z\"}}}],\"meta\":{\"total\":1,\"per_page\":15,\"current_page\":1,\"last_page\":1}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Show single medical facility details",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/medical-facilities\/:facility_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/medical-facilities\/:facility_id",
+                            "variable": [
+                                {
+                                    "id": "facility_id",
+                                    "key": "facility_id",
+                                    "value": "1",
+                                    "description": "The ID of the facility."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":1,\"address\":\"Test Address\",\"description\":\"Test Description\",\"operating_hours\":[{\"day\":\"monday\",\"open\":true,\"close\":false}],\"status\":\"Open\",\"created_at\":\"2025-01-27T23:44:12.000000Z\",\"updated_at\":\"2025-01-27T23:44:12.000000Z\",\"user\":{\"id\":2,\"name\":\"solidarity Facility\",\"email\":\"solidarity@facility.com\",\"whatsapp_number\":\"678678\",\"user_type\":\"medical_facility\",\"medical_facility\":{\"id\":1,\"address\":\"Test Address\",\"description\":\"Test Description\",\"operating_hours\":[{\"day\":\"monday\",\"open\":true,\"close\":false}],\"status\":\"Open\",\"units\":[\"Pediatrics\",\"Emergency\"],\"created_at\":\"2025-01-27T23:44:12.000000Z\",\"updated_at\":\"2025-01-27T23:44:12.000000Z\"}}}}",
                             "name": ""
                         }
                     ]
