@@ -5,14 +5,414 @@ description: ''
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/user
+      - POST
+    uri: api/auth/login
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Handle user login'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: ''
+        required: true
+        example: feeney.zachery@example.net
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: '>Z?bUng}k+vvsn|BRi(Y'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      email: feeney.zachery@example.net
+      password: '>Z?bUng}k+vvsn|BRi(Y'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/auth/register
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Handle user registration with medical facility support'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must be at least 4 characters.'
+        required: true
+        example: yjjonykvaljnpnnuuycvllrvgouuhlxjrdnwjpsfcdpgvrjoutiuxey
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: wschultz@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      password:
+        name: password
+        description: 'Must be at least 6 characters.'
+        required: true
+        example: 'M,Q@1)nh;irt:Ko==F!}'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      user_type:
+        name: user_type
+        description: ''
+        required: true
+        example: medical_facility
+        type: string
+        enumValues:
+          - finder
+          - medical_facility
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      whatsapp_number:
+        name: whatsapp_number
+        description: ''
+        required: true
+        example: minima
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      image:
+        name: image
+        description: 'Must be an image.'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      name: yjjonykvaljnpnnuuycvllrvgouuhlxjrdnwjpsfcdpgvrjoutiuxey
+      email: wschultz@example.com
+      password: 'M,Q@1)nh;irt:Ko==F!}'
+      user_type: medical_facility
+      whatsapp_number: minima
+    fileParameters:
+      image: null
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/auth/logout
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Handle user logout'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/auth/profile
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get authenticated user profile'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/medical-facilities/{facility}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update medical facility information'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      facility:
+        name: facility
+        description: ''
+        required: true
+        example: maiores
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      facility: maiores
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      address:
+        name: address
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: fyclqvnijuuusedali
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: true
+        example: 'Animi porro voluptatem adipisci ipsa.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      operating_hours:
+        name: operating_hours
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      status:
+        name: status
+        description: ''
+        required: true
+        example: inactive
+        type: string
+        enumValues:
+          - active
+          - inactive
+          - pending
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      units:
+        name: units
+        description: 'The <code>id</code> of an existing record in the units table.'
+        required: false
+        example: null
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'operating_hours[].day':
+        name: 'operating_hours[].day'
+        description: ''
+        required: true
+        example: wednesday
+        type: string
+        enumValues:
+          - monday
+          - tuesday
+          - wednesday
+          - thursday
+          - friday
+          - saturday
+          - sunday
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'operating_hours[].open':
+        name: 'operating_hours[].open'
+        description: 'Must be a valid date in the format <code>H:i</code>.'
+        required: true
+        example: '14:15'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'operating_hours[].close':
+        name: 'operating_hours[].close'
+        description: 'Must be a valid date in the format <code>H:i</code>.'
+        required: true
+        example: '14:15'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      address: fyclqvnijuuusedali
+      description: 'Animi porro voluptatem adipisci ipsa.'
+      operating_hours:
+        -
+          day: wednesday
+          open: '14:15'
+          close: '14:15'
+      status: inactive
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/medical-facilities/{facility_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete a medical facility and its relationships'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      facility_id:
+        name: facility_id
+        description: 'The ID of the facility.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      facility_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/units
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'List all medical units with pagination'
       description: ''
       authenticated: false
       custom: []
@@ -45,13 +445,13 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/medical-facilities
+    uri: api/units
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
+      title: ''
       description: ''
       authenticated: false
       custom: []
@@ -62,156 +462,12 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/medical-facilities/{facility_id}/units'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Store a newly created unit.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      facility_id:
-        name: facility_id
-        description: 'The ID of the facility.'
-        required: true
-        example: suscipit
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      facility_id: suscipit
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/medical-facilities/{id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Update the specified resource in storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the medical facility.'
-        required: true
-        example: eos
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: eos
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/medical-facilities/{facility_id}/units/{id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Update the specified unit.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      facility_id:
-        name: facility_id
-        description: 'The ID of the facility.'
-        required: true
-        example: ab
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      id:
-        name: id
-        description: 'The ID of the unit.'
-        required: true
-        example: 11
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      facility_id: ab
-      id: 11
-    queryParameters: []
-    cleanQueryParameters: []
     bodyParameters:
-      facility_id:
-        name: facility_id
-        description: 'The <code>id</code> of an existing record in the medical_facilities table.'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
       name:
         name: name
         description: 'Must not be greater than 255 characters.'
-        required: false
-        example: euxymhlfftcocxkjawzhjg
+        required: true
+        example: vhtrnikfl
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -220,28 +476,18 @@ endpoints:
       description:
         name: description
         description: ''
-        required: false
-        example: 'Fugiat ut soluta voluptas enim dolores velit deserunt.'
+        required: true
+        example: 'Sequi et odit et.'
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: true
-        custom: []
-      specialization:
-        name: specialization
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: aqqcgqzvdrqozcekkn
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
+        nullable: false
         custom: []
       status:
         name: status
         description: ''
-        required: false
-        example: active
+        required: true
+        example: inactive
         type: string
         enumValues:
           - active
@@ -250,10 +496,9 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: euxymhlfftcocxkjawzhjg
-      description: 'Fugiat ut soluta voluptas enim dolores velit deserunt.'
-      specialization: aqqcgqzvdrqozcekkn
-      status: active
+      name: vhtrnikfl
+      description: 'Sequi et odit et.'
+      status: inactive
     fileParameters: []
     responses: []
     responseFields: []
@@ -264,14 +509,14 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - DELETE
-    uri: 'api/medical-facilities/{id}'
+      - GET
+    uri: 'api/units/{id}'
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Remove the specified resource from storage.'
+      title: 'Show single unit details'
       description: ''
       authenticated: false
       custom: []
@@ -279,70 +524,145 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the medical facility.'
-        required: true
-        example: quis
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: quis
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/medical-facilities/{facility_id}/units/{id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Remove the specified unit.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      facility_id:
-        name: facility_id
-        description: 'The ID of the facility.'
-        required: true
-        example: ut
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
       id:
         name: id
         description: 'The ID of the unit.'
         required: true
-        example: 17
+        example: 13
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      facility_id: ut
-      id: 17
+      id: 13
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/units/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update existing unit'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the unit.'
+        required: true
+        example: 9
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: qwtlxzcftjjhh
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: true
+        example: 'Sapiente placeat deleniti rerum quasi harum nulla.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      status:
+        name: status
+        description: ''
+        required: true
+        example: inactive
+        type: string
+        enumValues:
+          - active
+          - inactive
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      name: qwtlxzcftjjhh
+      description: 'Sapiente placeat deleniti rerum quasi harum nulla.'
+      status: inactive
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/units/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete a unit'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the unit.'
+        required: true
+        example: 9
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 9
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -364,7 +684,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Search medical facilities with various filters'
+      title: 'Perform a general search across medical facilities'
       description: ''
       authenticated: false
       custom: []
@@ -375,102 +695,24 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/medical-facilities/filter
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Filter medical facilities based on various criteria'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/medical-facilities/{id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display the specified medical facility.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the medical facility.'
+    bodyParameters:
+      query:
+        name: query
+        description: 'Must be at least 2 characters.'
         required: true
-        example: qui
+        example: foqwbmcpjprnfwkautjcwqlacenmmltvzrbgzyuuswexwbmdripkzmzkzanlbbthj
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-    cleanUrlParameters:
-      id: qui
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    cleanBodyParameters:
+      query: foqwbmcpjprnfwkautjcwqlacenmmltvzrbgzyuuswexwbmdripkzmzkzanlbbthj
     fileParameters: []
     responses:
       -
-        status: 404
-        content: '{"status":"error","message":"Medical facility not found"}'
+        status: 200
+        content: '{"data":[],"meta":{"total":0,"per_page":15,"current_page":1,"last_page":1}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -486,13 +728,52 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/medical-facilities/{facility_id}/units/{id}'
+    uri: api/medical-facilities
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display the specified unit.'
+      title: 'List all medical facilities with pagination'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"address":"Test Address","description":"Test Description","operating_hours":[{"day":"monday","open":true,"close":false}],"status":"Open","created_at":"2025-01-27T23:44:12.000000Z","updated_at":"2025-01-27T23:44:12.000000Z","user":{"id":2,"name":"solidarity Facility","email":"solidarity@facility.com","whatsapp_number":"678678","user_type":"medical_facility","medical_facility":{"id":1,"address":"Test Address","description":"Test Description","operating_hours":[{"day":"monday","open":true,"close":false}],"status":"Open","units":["Pediatrics","Emergency"],"created_at":"2025-01-27T23:44:12.000000Z","updated_at":"2025-01-27T23:44:12.000000Z"}}}],"meta":{"total":1,"per_page":15,"current_page":1,"last_page":1}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/medical-facilities/{facility_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show single medical facility details'
       description: ''
       authenticated: false
       custom: []
@@ -510,19 +791,8 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         custom: []
-      id:
-        name: id
-        description: 'The ID of the unit.'
-        required: true
-        example: 20
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
     cleanUrlParameters:
       facility_id: 1
-      id: 20
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -530,11 +800,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 500
-        content: |-
-          {
-              "message": "Server Error"
-          }
+        status: 200
+        content: '{"data":{"id":1,"address":"Test Address","description":"Test Description","operating_hours":[{"day":"monday","open":true,"close":false}],"status":"Open","created_at":"2025-01-27T23:44:12.000000Z","updated_at":"2025-01-27T23:44:12.000000Z","user":{"id":2,"name":"solidarity Facility","email":"solidarity@facility.com","whatsapp_number":"678678","user_type":"medical_facility","medical_facility":{"id":1,"address":"Test Address","description":"Test Description","operating_hours":[{"day":"monday","open":true,"close":false}],"status":"Open","units":["Pediatrics","Emergency"],"created_at":"2025-01-27T23:44:12.000000Z","updated_at":"2025-01-27T23:44:12.000000Z"}}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json

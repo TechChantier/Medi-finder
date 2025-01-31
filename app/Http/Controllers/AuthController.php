@@ -42,10 +42,13 @@ class AuthController extends Controller
     {
         try {
             DB::beginTransaction();
+
+
             $userData = [
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
+                'image' => $request->image,
                 'whatsapp_number' => $request->whatsapp_number,
                 'user_type' => $request->user_type
             ];

@@ -7,158 +7,219 @@ servers:
   -
     url: 'http://localhost'
 paths:
-  /api/user:
-    get:
-      summary: ''
-      operationId: getApiUser
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
-  /api/medical-facilities:
+  /api/auth/login:
     post:
-      summary: 'Store a newly created resource in storage.'
-      operationId: storeANewlyCreatedResourceInStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-  '/api/medical-facilities/{facility_id}/units':
-    post:
-      summary: 'Store a newly created unit.'
-      operationId: storeANewlyCreatedUnit
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: facility_id
-        description: 'The ID of the facility.'
-        example: suscipit
-        required: true
-        schema:
-          type: string
-  '/api/medical-facilities/{id}':
-    put:
-      summary: 'Update the specified resource in storage.'
-      operationId: updateTheSpecifiedResourceInStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    delete:
-      summary: 'Remove the specified resource from storage.'
-      operationId: removeTheSpecifiedResourceFromStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    get:
-      summary: 'Display the specified medical facility.'
-      operationId: displayTheSpecifiedMedicalFacility
-      description: ''
-      parameters: []
-      responses:
-        404:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  status: error
-                  message: 'Medical facility not found'
-                properties:
-                  status:
-                    type: string
-                    example: error
-                  message:
-                    type: string
-                    example: 'Medical facility not found'
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: id
-        description: 'The ID of the medical facility.'
-        example: eos
-        required: true
-        schema:
-          type: string
-  '/api/medical-facilities/{facility_id}/units/{id}':
-    put:
-      summary: 'Update the specified unit.'
-      operationId: updateTheSpecifiedUnit
+      summary: 'Handle user login'
+      operationId: handleUserLogin
       description: ''
       parameters: []
       responses: {  }
       tags:
         - Endpoints
       requestBody:
-        required: false
+        required: true
         content:
           application/json:
             schema:
               type: object
               properties:
-                facility_id:
+                email:
                   type: string
-                  description: 'The <code>id</code> of an existing record in the medical_facilities table.'
-                  example: null
+                  description: ''
+                  example: feeney.zachery@example.net
                   nullable: false
+                password:
+                  type: string
+                  description: ''
+                  example: '>Z?bUng}k+vvsn|BRi(Y'
+                  nullable: false
+              required:
+                - email
+                - password
+      security: []
+  /api/auth/register:
+    post:
+      summary: 'Handle user registration with medical facility support'
+      operationId: handleUserRegistrationWithMedicalFacilitySupport
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
                 name:
                   type: string
+                  description: 'Must be at least 4 characters.'
+                  example: yjjonykvaljnpnnuuycvllrvgouuhlxjrdnwjpsfcdpgvrjoutiuxey
+                  nullable: false
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: wschultz@example.com
+                  nullable: false
+                password:
+                  type: string
+                  description: 'Must be at least 6 characters.'
+                  example: 'M,Q@1)nh;irt:Ko==F!}'
+                  nullable: false
+                user_type:
+                  type: string
+                  description: ''
+                  example: medical_facility
+                  nullable: false
+                  enum:
+                    - finder
+                    - medical_facility
+                whatsapp_number:
+                  type: string
+                  description: ''
+                  example: minima
+                  nullable: false
+                image:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
+                  nullable: true
+              required:
+                - name
+                - email
+                - password
+                - user_type
+                - whatsapp_number
+      security: []
+  /api/auth/logout:
+    post:
+      summary: 'Handle user logout'
+      operationId: handleUserLogout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/auth/profile:
+    get:
+      summary: 'Get authenticated user profile'
+      operationId: getAuthenticatedUserProfile
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  '/api/medical-facilities/{facility}':
+    patch:
+      summary: 'Update medical facility information'
+      operationId: updateMedicalFacilityInformation
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                address:
+                  type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: euxymhlfftcocxkjawzhjg
+                  example: fyclqvnijuuusedali
                   nullable: false
                 description:
                   type: string
                   description: ''
-                  example: 'Fugiat ut soluta voluptas enim dolores velit deserunt.'
-                  nullable: true
-                specialization:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: aqqcgqzvdrqozcekkn
-                  nullable: true
+                  example: 'Animi porro voluptatem adipisci ipsa.'
+                  nullable: false
+                operating_hours:
+                  type: array
+                  description: ''
+                  example:
+                    - []
+                  items:
+                    type: object
+                    properties:
+                      day:
+                        type: string
+                        description: ''
+                        example: wednesday
+                        nullable: false
+                        enum:
+                          - monday
+                          - tuesday
+                          - wednesday
+                          - thursday
+                          - friday
+                          - saturday
+                          - sunday
+                      open:
+                        type: string
+                        description: 'Must be a valid date in the format <code>H:i</code>.'
+                        example: '14:15'
+                        nullable: false
+                      close:
+                        type: string
+                        description: 'Must be a valid date in the format <code>H:i</code>.'
+                        example: '14:15'
+                        nullable: false
+                    required:
+                      - day
+                      - open
+                      - close
                 status:
                   type: string
                   description: ''
-                  example: active
+                  example: inactive
                   nullable: false
                   enum:
                     - active
                     - inactive
+                    - pending
+                units:
+                  type: array
+                  description: 'The <code>id</code> of an existing record in the units table.'
+                  example: null
+                  items:
+                    type: string
+              required:
+                - address
+                - description
+                - operating_hours
+                - status
       security: []
+    parameters:
+      -
+        in: path
+        name: facility
+        description: ''
+        example: maiores
+        required: true
+        schema:
+          type: string
+  '/api/medical-facilities/{facility_id}':
     delete:
-      summary: 'Remove the specified unit.'
-      operationId: removeTheSpecifiedUnit
+      summary: 'Delete a medical facility and its relationships'
+      operationId: deleteAMedicalFacilityAndItsRelationships
       description: ''
       parameters: []
       responses: {  }
@@ -166,23 +227,157 @@ paths:
         - Endpoints
       security: []
     get:
-      summary: 'Display the specified unit.'
-      operationId: displayTheSpecifiedUnit
+      summary: 'Show single medical facility details'
+      operationId: showSingleMedicalFacilityDetails
       description: ''
       parameters: []
       responses:
-        500:
+        200:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'Server Error'
+                  data:
+                    id: 1
+                    address: 'Test Address'
+                    description: 'Test Description'
+                    operating_hours:
+                      -
+                        day: monday
+                        open: true
+                        close: false
+                    status: Open
+                    created_at: '2025-01-27T23:44:12.000000Z'
+                    updated_at: '2025-01-27T23:44:12.000000Z'
+                    user:
+                      id: 2
+                      name: 'solidarity Facility'
+                      email: solidarity@facility.com
+                      whatsapp_number: '678678'
+                      user_type: medical_facility
+                      medical_facility:
+                        id: 1
+                        address: 'Test Address'
+                        description: 'Test Description'
+                        operating_hours:
+                          -
+                            day: monday
+                            open: true
+                            close: false
+                        status: Open
+                        units:
+                          - Pediatrics
+                          - Emergency
+                        created_at: '2025-01-27T23:44:12.000000Z'
+                        updated_at: '2025-01-27T23:44:12.000000Z'
                 properties:
-                  message:
-                    type: string
-                    example: 'Server Error'
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      address:
+                        type: string
+                        example: 'Test Address'
+                      description:
+                        type: string
+                        example: 'Test Description'
+                      operating_hours:
+                        type: array
+                        example:
+                          -
+                            day: monday
+                            open: true
+                            close: false
+                        items:
+                          type: object
+                          properties:
+                            day:
+                              type: string
+                              example: monday
+                            open:
+                              type: boolean
+                              example: true
+                            close:
+                              type: boolean
+                              example: false
+                      status:
+                        type: string
+                        example: Open
+                      created_at:
+                        type: string
+                        example: '2025-01-27T23:44:12.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2025-01-27T23:44:12.000000Z'
+                      user:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 2
+                          name:
+                            type: string
+                            example: 'solidarity Facility'
+                          email:
+                            type: string
+                            example: solidarity@facility.com
+                          whatsapp_number:
+                            type: string
+                            example: '678678'
+                          user_type:
+                            type: string
+                            example: medical_facility
+                          medical_facility:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 1
+                              address:
+                                type: string
+                                example: 'Test Address'
+                              description:
+                                type: string
+                                example: 'Test Description'
+                              operating_hours:
+                                type: array
+                                example:
+                                  -
+                                    day: monday
+                                    open: true
+                                    close: false
+                                items:
+                                  type: object
+                                  properties:
+                                    day:
+                                      type: string
+                                      example: monday
+                                    open:
+                                      type: boolean
+                                      example: true
+                                    close:
+                                      type: boolean
+                                      example: false
+                              status:
+                                type: string
+                                example: Open
+                              units:
+                                type: array
+                                example:
+                                  - Pediatrics
+                                  - Emergency
+                                items:
+                                  type: string
+                              created_at:
+                                type: string
+                                example: '2025-01-27T23:44:12.000000Z'
+                              updated_at:
+                                type: string
+                                example: '2025-01-27T23:44:12.000000Z'
       tags:
         - Endpoints
       security: []
@@ -191,118 +386,412 @@ paths:
         in: path
         name: facility_id
         description: 'The ID of the facility.'
-        example: ab
+        example: 1
         required: true
         schema:
-          type: string
+          type: integer
+  /api/units:
+    get:
+      summary: 'List all medical units with pagination'
+      operationId: listAllMedicalUnitsWithPagination
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiUnits
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: vhtrnikfl
+                  nullable: false
+                description:
+                  type: string
+                  description: ''
+                  example: 'Sequi et odit et.'
+                  nullable: false
+                status:
+                  type: string
+                  description: ''
+                  example: inactive
+                  nullable: false
+                  enum:
+                    - active
+                    - inactive
+              required:
+                - name
+                - description
+                - status
+      security: []
+  '/api/units/{id}':
+    get:
+      summary: 'Show single unit details'
+      operationId: showSingleUnitDetails
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Update existing unit'
+      operationId: updateExistingUnit
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: qwtlxzcftjjhh
+                  nullable: false
+                description:
+                  type: string
+                  description: ''
+                  example: 'Sapiente placeat deleniti rerum quasi harum nulla.'
+                  nullable: false
+                status:
+                  type: string
+                  description: ''
+                  example: inactive
+                  nullable: false
+                  enum:
+                    - active
+                    - inactive
+              required:
+                - name
+                - description
+                - status
+      security: []
+    delete:
+      summary: 'Delete a unit'
+      operationId: deleteAUnit
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
       -
         in: path
         name: id
         description: 'The ID of the unit.'
-        example: 11
+        example: 13
         required: true
         schema:
           type: integer
   /api/medical-facilities/search:
     get:
-      summary: 'Search medical facilities with various filters'
-      operationId: searchMedicalFacilitiesWithVariousFilters
+      summary: 'Perform a general search across medical facilities'
+      operationId: performAGeneralSearchAcrossMedicalFacilities
       description: ''
       parameters: []
       responses:
-        401:
+        200:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: Unauthenticated.
+                  data: []
+                  meta:
+                    total: 0
+                    per_page: 15
+                    current_page: 1
+                    last_page: 1
                 properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
+                  data:
+                    type: array
+                    example: []
+                  meta:
+                    type: object
+                    properties:
+                      total:
+                        type: integer
+                        example: 0
+                      per_page:
+                        type: integer
+                        example: 15
+                      current_page:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
       tags:
         - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  description: 'Must be at least 2 characters.'
+                  example: foqwbmcpjprnfwkautjcwqlacenmmltvzrbgzyuuswexwbmdripkzmzkzanlbbthj
+                  nullable: false
+              required:
+                - query
       security: []
-  /api/medical-facilities/filter:
+  /api/medical-facilities:
     get:
-      summary: 'Filter medical facilities based on various criteria'
-      operationId: filterMedicalFacilitiesBasedOnVariousCriteria
+      summary: 'List all medical facilities with pagination'
+      operationId: listAllMedicalFacilitiesWithPagination
       description: ''
       parameters: []
       responses:
-        401:
+        200:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: Unauthenticated.
+                  data:
+                    -
+                      id: 1
+                      address: 'Test Address'
+                      description: 'Test Description'
+                      operating_hours:
+                        -
+                          day: monday
+                          open: true
+                          close: false
+                      status: Open
+                      created_at: '2025-01-27T23:44:12.000000Z'
+                      updated_at: '2025-01-27T23:44:12.000000Z'
+                      user:
+                        id: 2
+                        name: 'solidarity Facility'
+                        email: solidarity@facility.com
+                        whatsapp_number: '678678'
+                        user_type: medical_facility
+                        medical_facility:
+                          id: 1
+                          address: 'Test Address'
+                          description: 'Test Description'
+                          operating_hours:
+                            -
+                              day: monday
+                              open: true
+                              close: false
+                          status: Open
+                          units:
+                            - Pediatrics
+                            - Emergency
+                          created_at: '2025-01-27T23:44:12.000000Z'
+                          updated_at: '2025-01-27T23:44:12.000000Z'
+                  meta:
+                    total: 1
+                    per_page: 15
+                    current_page: 1
+                    last_page: 1
                 properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        address: 'Test Address'
+                        description: 'Test Description'
+                        operating_hours:
+                          -
+                            day: monday
+                            open: true
+                            close: false
+                        status: Open
+                        created_at: '2025-01-27T23:44:12.000000Z'
+                        updated_at: '2025-01-27T23:44:12.000000Z'
+                        user:
+                          id: 2
+                          name: 'solidarity Facility'
+                          email: solidarity@facility.com
+                          whatsapp_number: '678678'
+                          user_type: medical_facility
+                          medical_facility:
+                            id: 1
+                            address: 'Test Address'
+                            description: 'Test Description'
+                            operating_hours:
+                              -
+                                day: monday
+                                open: true
+                                close: false
+                            status: Open
+                            units:
+                              - Pediatrics
+                              - Emergency
+                            created_at: '2025-01-27T23:44:12.000000Z'
+                            updated_at: '2025-01-27T23:44:12.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        address:
+                          type: string
+                          example: 'Test Address'
+                        description:
+                          type: string
+                          example: 'Test Description'
+                        operating_hours:
+                          type: array
+                          example:
+                            -
+                              day: monday
+                              open: true
+                              close: false
+                          items:
+                            type: object
+                            properties:
+                              day:
+                                type: string
+                                example: monday
+                              open:
+                                type: boolean
+                                example: true
+                              close:
+                                type: boolean
+                                example: false
+                        status:
+                          type: string
+                          example: Open
+                        created_at:
+                          type: string
+                          example: '2025-01-27T23:44:12.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2025-01-27T23:44:12.000000Z'
+                        user:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 2
+                            name:
+                              type: string
+                              example: 'solidarity Facility'
+                            email:
+                              type: string
+                              example: solidarity@facility.com
+                            whatsapp_number:
+                              type: string
+                              example: '678678'
+                            user_type:
+                              type: string
+                              example: medical_facility
+                            medical_facility:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 1
+                                address:
+                                  type: string
+                                  example: 'Test Address'
+                                description:
+                                  type: string
+                                  example: 'Test Description'
+                                operating_hours:
+                                  type: array
+                                  example:
+                                    -
+                                      day: monday
+                                      open: true
+                                      close: false
+                                  items:
+                                    type: object
+                                    properties:
+                                      day: { type: string, example: monday }
+                                      open: { type: boolean, example: true }
+                                      close: { type: boolean, example: false }
+                                status:
+                                  type: string
+                                  example: Open
+                                units:
+                                  type: array
+                                  example:
+                                    - Pediatrics
+                                    - Emergency
+                                  items:
+                                    type: string
+                                created_at:
+                                  type: string
+                                  example: '2025-01-27T23:44:12.000000Z'
+                                updated_at:
+                                  type: string
+                                  example: '2025-01-27T23:44:12.000000Z'
+                  meta:
+                    type: object
+                    properties:
+                      total:
+                        type: integer
+                        example: 1
+                      per_page:
+                        type: integer
+                        example: 15
+                      current_page:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
       tags:
         - Endpoints
-      security: []
-  /api/auth/login:
-    post:
-      summary: ''
-      operationId: postApiAuthLogin
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - 'User Management'
-      security: []
-  /api/auth/register:
-    post:
-      summary: ''
-      operationId: postApiAuthRegister
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - 'User Management'
-      security: []
-  /api/auth/logout:
-    post:
-      summary: ''
-      operationId: postApiAuthLogout
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - 'User Management'
-      security: []
-  /api/auth/user:
-    get:
-      summary: ''
-      operationId: getApiAuthUser
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - 'User Management'
       security: []
 tags:
   -
     name: Endpoints
     description: ''
-  -
-    name: 'User Management'
-    description: "\nAPIs to manage the user Authentication."
