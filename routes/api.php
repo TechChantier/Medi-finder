@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MedicalFacilityController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\UnitController; // Auth Routes
-
+use App\Http\Controllers\UnitController;
 
 // Auth Routes
 Route::post('auth/login', [AuthController::class, 'login']);
@@ -17,7 +16,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('auth/profile', [AuthController::class, 'profile']);
 
     // Medical Facilities Protected Routes
-    Route::patch('medical-facilities/{facility}', [MedicalFacilityController::class, 'update']);
+    Route::put('medical-facilities/{facility}', [MedicalFacilityController::class, 'update']);
     Route::delete('medical-facilities/{facility}', [MedicalFacilityController::class, 'destroy']);
     Route::apiResource('units', UnitController::class);
 });

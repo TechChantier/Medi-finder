@@ -21,6 +21,8 @@ class MedicalFacility extends Model
         'user_id',
         'address',
         'description',
+        'emergency_contact',
+        'google_map_url',
         'operating_hours', // JSON array of operating hours
         'status',         // Open/Closed
         'units'          // JSON array of units
