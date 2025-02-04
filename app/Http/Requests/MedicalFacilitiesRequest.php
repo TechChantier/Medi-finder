@@ -22,12 +22,14 @@ class MedicalFacilitiesRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'address' => ['required' , 'string'],
-            'description' => ['required' , 'string'],
-            'operating_hours' => ['nullable' , 'string'],
-            'status' => ['required' , 'in:Open,Closed'],
-            'units' => ['required' , 'array' , 'max:255'],
-            'units.*' => ['string'],  
+            'address' => ['required', 'string'],
+            'description' => ['required', 'string'],
+            'emergency_contact' => ['nullable', 'string'],
+            'google_map_url' => ['nullable', 'string'],
+            'operating_hours' => ['nullable', 'string'],
+            'status' => ['required', 'in:Open,Closed'],
+            'units' => ['required', 'array', 'max:255'],
+            'units.*' => ['string'],
         ];
     }
 }
