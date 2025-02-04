@@ -12,6 +12,8 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\UpdateUserRequest;
 
 class AuthController extends Controller
 {
@@ -61,6 +63,8 @@ class AuthController extends Controller
                 $user->medicalFacility()->create([
                     'address' => $request->address,
                     'description' => $request->description,
+                    'emergency_contact' => $request->emergency_contact,
+                    'google_map_url' => $request->google_map_url,
                     'operating_hours' => $request->operating_hours,
                     'status' => 'Open',
                     'units' => $request->units ?? [] // Store directly as JSON
