@@ -34,6 +34,8 @@ class UserResource extends JsonResource
             'medical_facility' => $this->when($this->medicalFacility, fn() => [
                 'id' => $this->medicalFacility->id,
                 'address' => $this->medicalFacility->address,
+                'emergency_contact' => $this->medicalFacility->emergency_contact,
+                'google_map_url' => $this->medicalFacility->google_map_url,
                 'description' => $this->medicalFacility->description,
                 'operating_hours' => $this->medicalFacility->operating_hours,
                 'status' => $this->medicalFacility->status,
