@@ -51,6 +51,7 @@ class MedicalFacilityController extends Controller
                 $facilitiesQuery->where(function ($q) use ($query) {
                     $q->where('address', 'like', "%{$query}%")
                         ->orWhere('description', 'like', "%{$query}%")
+                        ->orWhere('name', 'like', "%{$query}%")
                         ->orWhere('services', 'like', "%{$query}%")
                         ->orWhere('status', 'like', "%{$query}%")
                         ->orWhere('units', 'like', "%{$query}%")
@@ -167,69 +168,6 @@ class MedicalFacilityController extends Controller
         }
     }
 
-
-    /**
-     * Update medical facility information
-     */
-    // public function update(UpdateMedicalFacilityRequest $request, UpdateUserRequest $userResquest): JsonResponse
-    // {
-    //     try {
-    //         DB::beginTransaction();
-
-    //         $user = $request->user();
-    //         $facility = $user->medicalFacility;
-
-    //         // Update user data
-    //         $userData = [
-    //             'name' => $userResquest->input('name', $user->name),
-    //             'email' => $userResquest->input('email', $user->email),
-    //             'whatsapp_number' => $userResquest->input('whatsapp_number', $user->whatsapp_number),
-    //         ];
-
-
-
-
-    //         // Handle image upload
-    //         if ($request->hasFile('image')) {
-    //             // Delete old image if exists
-    //             if ($user->image) {
-    //                 Storage::disk('public')->delete($user->image);
-    //             }
-    //             $userData['image'] = $request->file('image')->store('users', 'public');
-    //         }
-
-    //         // Update user
-    //         $user->update($userData);
-
-    //         // Update facility
-    //         $facility->update($request->validated());
-
-    //         // Update units if provided
-    //         if ($request->has('units')) {
-    //             $facility->units()->sync($request->units);
-    //         }
-
-    //         DB::commit();
-
-    //         logger()->info('User Update Data:', $userResquest->all());
-
-    //         $facility->load(['user']);
-    //         return response()->json([
-    //             'message' => 'Facility and user information updated successfully',
-    //             'data' => new UpdateResource($facility)
-    //         ]);
-    //     } catch (\Exception $e) {
-    //         DB::rollBack();
-    //         logger()->error('Failed to update facility and user information', [
-    //             'error' => $e->getMessage(),
-    //             'user_id' => $request->user()->id
-    //         ]);
-
-    //         return response()->json([
-    //             'message' => 'Failed to update facility and user information'
-    //         ], 500);
-    //     }
-    // }
     public function update(UpdateMedicalFacilityRequest $request): JsonResponse
     {
         try {
