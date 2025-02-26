@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\MedicalFacility;
+use App\Models\Unit;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,7 +15,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(10)->create();
+        User::factory(15)->create();
+        MedicalFacility::factory(15)->create();
+        Unit::factory(15)->create();
 
         // User::factory()->create([
         //     'name' => 'Test User',
