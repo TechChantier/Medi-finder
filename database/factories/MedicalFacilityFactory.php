@@ -72,17 +72,7 @@ class MedicalFacilityFactory extends Factory
         ]);
     }
 
-    /**
-     * Indicate that the facility is pending approval.
-     *
-     * @return \Illuminate\Database\Eloquent\Factories\Factory
-     */
-    public function pending()
-    {
-        return $this->state(fn(array $attributes) => [
-            'status' => 'pending',
-        ]);
-    }
+
 
     /**
      * Define a hospital with 24/7 emergency services.
