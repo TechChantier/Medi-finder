@@ -17,8 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->text('address');
             $table->text('description');
-            $table->string('emergency_contact', 10)->nullable()->unique();
-            $table->string('google_map_url')->nullable()->unique();
+            $table->text('emergency_contact')->nullable()->unique();
+            $table->text('google_map_url')->nullable()->unique();
             $table->text('operating_hours')->nullable();
             $table->text('services')->nullable();
             $table->json('units');
