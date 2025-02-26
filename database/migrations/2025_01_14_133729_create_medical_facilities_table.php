@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('address');
             $table->text('description');
             $table->text('emergency_contact')->nullable()->unique();
-            $table->string('google_map_url')->nullable()->unique();
+            $table->text('google_map_url')->nullable()->unique();
             $table->text('operating_hours')->nullable();
             $table->text('services')->nullable();
             $table->json('units');
