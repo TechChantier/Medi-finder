@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\MedicalFacility;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class UnitFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'facility_id' => fake()->numberBetween(1, MedicalFacility::count()),
+            'name' => fake()->name(),
+            'description' => fake()->paragraph(),
+            'status' => fake()->randomElement(['Active', 'Inactive']),
         ];
     }
 }
