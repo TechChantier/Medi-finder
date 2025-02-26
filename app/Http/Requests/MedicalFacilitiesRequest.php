@@ -24,7 +24,7 @@ class MedicalFacilitiesRequest extends FormRequest
         return [
             'address' => ['required', 'string'],
             'description' => ['required', 'string'],
-            'emergency_contact' => ['nullable', 'string'],
+            'emergency_contact' => ['nullable', 'string', 'max:10'],
             'google_map_url' => ['nullable', 'string'],
             'operating_hours' => ['nullable', 'string'],
             'status' => ['required', 'in:Open,Closed'],

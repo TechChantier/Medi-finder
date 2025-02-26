@@ -10,23 +10,24 @@ use App\Models\MedicalFacility;
  */
 class MedicalFacilityFactory extends Factory
 {
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
-    protected $model = MedicalFacility::class;
+    // /**
+    //  * The name of the factory's corresponding model.
+    //  *
+    //  * @var string
+    //  */
+    // protected $model = MedicalFacility::class;
 
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    // /**
+    //  * Define the model's default state.
+    //  *
+    //  * @return array<string, mixed>
+    //  */
     public function definition(): array
     {
         return [
+            'user_id' => 1,
             'address' => $this->faker->address(),
-            'emergency_contact' => $this->faker->phoneNumber(),
+            'emergency_contact' => $this->faker->numerify('##########'),
             'google_map_url' => 'https://maps.google.com/?q=' . $this->faker->latitude() . ',' . $this->faker->longitude(),
             'description' => $this->faker->paragraph(3),
             'operating_hours' => json_encode([
@@ -38,7 +39,7 @@ class MedicalFacilityFactory extends Factory
                 'saturday' => ['10:00 AM - 02:00 PM'],
                 'sunday' => ['Closed'],
             ]),
-            'status' => $this->faker->randomElement(['active', 'inactive', 'pending']),
+            'status' => fake()->randomElement(['Open', 'Closed']),
             'units' => $this->faker->randomElement([
                 json_encode(['General Medicine', 'Pediatrics', 'Cardiology']),
                 json_encode(['Emergency', 'Surgery', 'Obstetrics & Gynecology']),
@@ -70,39 +71,5 @@ class MedicalFacilityFactory extends Factory
         return $this->state(fn(array $attributes) => [
             'status' => 'inactive',
         ]);
-    }
-
-
-
-    /**
-     * Define a hospital with 24/7 emergency services.
-     *
-     * @return \Illuminate\Database\Eloquent\Factories\Factory
-     */
-    public function emergencyHospital()
-    {
-        return $this->state(function (array $attributes) {
-            return [
-                'description' => 'Full-service hospital with 24/7 emergency care.',
-                'operating_hours' => json_encode([
-                    'monday' => ['Open 24 hours'],
-                    'tuesday' => ['Open 24 hours'],
-                    'wednesday' => ['Open 24 hours'],
-                    'thursday' => ['Open 24 hours'],
-                    'friday' => ['Open 24 hours'],
-                    'saturday' => ['Open 24 hours'],
-                    'sunday' => ['Open 24 hours'],
-                ]),
-                'units' => json_encode([
-                    'Emergency',
-                    'General Medicine',
-                    'Surgery',
-                    'ICU',
-                    'Pediatrics',
-                    'Cardiology',
-                    'Orthopedics'
-                ]),
-            ];
-        });
     }
 }
