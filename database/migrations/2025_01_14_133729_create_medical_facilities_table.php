@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('emergency_contact')->nullable()->unique();
             $table->text('google_map_url')->nullable()->unique();
             $table->text('operating_hours')->nullable();
-            $table->text('services')->nullable();
+            $table->enum('category', ['Health Care', 'Pharmacy', 'Clinic'])->default('Health Care');
             $table->json('units');
             $table->enum('status', ['Open', 'Closed'])->default('Open');
 
