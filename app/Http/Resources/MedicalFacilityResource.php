@@ -10,7 +10,6 @@ class MedicalFacilityResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-
             'user' => new UserResource($this->whenLoaded('user'))
         ];
     }
