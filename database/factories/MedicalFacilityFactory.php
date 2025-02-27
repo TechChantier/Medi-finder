@@ -4,28 +4,35 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\MedicalFacility;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\MedicalFacility>
  */
 class MedicalFacilityFactory extends Factory
 {
-    // /**
-    //  * The name of the factory's corresponding model.
-    //  *
-    //  * @var string
-    //  */
-    // protected $model = MedicalFacility::class;
-
-    // /**
-    //  * Define the model's default state.
-    //  *
-    //  * @return array<string, mixed>
-    //  */
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
     public function definition(): array
     {
+        // Create a user with user_type = "medical_facility"
+        $user = User::factory()->create([
+            'name' => fake()->name(),
+            'email' => fake()->unique()->safeEmail(),
+            'whatsapp_number' => $this->faker->numerify('##########'),
+            'email_verified_at' => now(),
+            'password' => Hash::make('password'),
+            'remember_token' => Str::random(10),
+            'user_type' => 'medical_facility',
+        ]);
+
         return [
-            'user_id' => 1,
+            'user_id' => $user->id,
             'address' => $this->faker->address(),
             'emergency_contact' => $this->faker->numerify('##########'),
             'google_map_url' => 'https://maps.google.com/?q=' . $this->faker->latitude() . ',' . $this->faker->longitude(),
