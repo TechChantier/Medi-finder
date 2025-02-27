@@ -34,6 +34,7 @@ class MedicalFacilityFactory extends Factory
         return [
             'user_id' => $user->id,
             'address' => $this->faker->address(),
+            'category' => fake()->randomElement(['Health Care', 'Pharmacy', 'Clinic']),
             'emergency_contact' => $this->faker->numerify('##########'),
             'google_map_url' => 'https://maps.google.com/?q=' . $this->faker->latitude() . ',' . $this->faker->longitude(),
             'description' => $this->faker->paragraph(3),

@@ -62,6 +62,7 @@ class AuthController extends Controller
                 // Create facility with direct JSON data
                 $user->medicalFacility()->create([
                     'address' => $request->address,
+                    'category' => $request->category,
                     'description' => $request->description,
                     'emergency_contact' => $request->emergency_contact,
                     'google_map_url' => $request->google_map_url,

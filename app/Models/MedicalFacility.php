@@ -10,6 +10,15 @@ class MedicalFacility extends Model
 {
     use HasFactory;
     /**
+     * type of facility
+     * @var array
+     */
+    const CATEGORY = [
+        'Health Care' => 'Health Care',
+        'Pharmacy' => 'Pharmacy',
+        'Clinic' => 'Clinic'
+    ];
+    /**
      * Status constants for facility
      */
     const STATUS = [
@@ -21,6 +30,7 @@ class MedicalFacility extends Model
      */
     protected $fillable = [
         'user_id',
+        'category',
         'address',
         'description',
         'emergency_contact',

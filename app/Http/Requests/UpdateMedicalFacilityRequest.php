@@ -30,7 +30,7 @@ class UpdateMedicalFacilityRequest extends FormRequest
             'image' => ['nullable', 'image'],
 
 
-            
+
             'address' => ['sometimes', 'required', 'string', 'max:255'],
             'description' => ['sometimes', 'required', 'string'],
             'emergency_contact' => ['sometimes', 'string', 'max:12',],
@@ -46,6 +46,11 @@ class UpdateMedicalFacilityRequest extends FormRequest
                 'sometimes',
                 'required',
                 Rule::in(['active', 'inactive', 'pending'])
+            ],
+            'category' => [
+                'sometimes',
+                'required',
+                Rule::in(['Health Care', 'Pharmacy', 'Clinic'])
             ],
             'units' => ['sometimes', 'required', 'array'],
             'units.*' => ['exists:units,id']

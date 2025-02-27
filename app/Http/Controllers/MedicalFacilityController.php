@@ -51,8 +51,7 @@ class MedicalFacilityController extends Controller
                 $facilitiesQuery->where(function ($q) use ($query) {
                     $q->where('address', 'like', "%{$query}%")
                         ->orWhere('description', 'like', "%{$query}%")
-                        ->orWhere('name', 'like', "%{$query}%")
-                        ->orWhere('services', 'like', "%{$query}%")
+                        ->orWhere('category', 'like', "%{$query}%")
                         ->orWhere('status', 'like', "%{$query}%")
                         ->orWhere('units', 'like', "%{$query}%")
                         ->orWhere('emergency_contact', 'like', "%{$query}%");

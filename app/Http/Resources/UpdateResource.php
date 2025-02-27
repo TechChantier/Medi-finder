@@ -28,6 +28,7 @@ class UpdateResource extends JsonResource
             'status' => $this->status,
             'units' => $this->units,
             'address' => $this->address,
+            'category' => $this->category,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];

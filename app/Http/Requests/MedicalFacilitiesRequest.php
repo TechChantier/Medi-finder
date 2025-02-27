@@ -23,6 +23,7 @@ class MedicalFacilitiesRequest extends FormRequest
     {
         return [
             'address' => ['required', 'string'],
+            'category' => ['required', 'in:Health Care,Pharmacy,Clinic'],
             'description' => ['required', 'string'],
             'emergency_contact' => ['nullable', 'string', 'max:10'],
             'google_map_url' => ['nullable', 'string'],
