@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->text('address');
             $table->text('description');
-            $table->text('emergency_contact')->nullable()->unique();
+            $table->string('emergency_contact', 255)->nullable()->unique();
             $table->text('google_map_url')->nullable()->unique();
             $table->text('operating_hours')->nullable();
             $table->enum('category', ['Health Care', 'Pharmacy', 'Clinic'])->default('Health Care');
