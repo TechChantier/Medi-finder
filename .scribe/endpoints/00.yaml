@@ -26,7 +26,7 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: ppagac@example.com
+        example: rath.gaston@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -36,15 +36,15 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: '-a!84msI-u62!>0'
+        example: U7s@.dwZ>a^
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: ppagac@example.com
-      password: '-a!84msI-u62!>0'
+      email: rath.gaston@example.org
+      password: U7s@.dwZ>a^
     fileParameters: []
     responses: []
     responseFields: []
@@ -78,7 +78,7 @@ endpoints:
         name: name
         description: 'Must be at least 4 characters.'
         required: true
-        example: ugrzgezoacgunpzfxt
+        example: dfdamijvbapjmungzenahjpegzrik
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: colt.runte@example.org
+        example: wkuhn@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,7 +98,7 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: 'a9&)3m#uS~TFtBCdo^k'
+        example: 'wpx_Wh?5k4K'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -108,7 +108,7 @@ endpoints:
         name: user_type
         description: ''
         required: true
-        example: finder
+        example: medical_facility
         type: string
         enumValues:
           - finder
@@ -120,7 +120,7 @@ endpoints:
         name: whatsapp_number
         description: ''
         required: true
-        example: at
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -137,11 +137,11 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      name: ugrzgezoacgunpzfxt
-      email: colt.runte@example.org
-      password: 'a9&)3m#uS~TFtBCdo^k'
-      user_type: finder
-      whatsapp_number: at
+      name: dfdamijvbapjmungzenahjpegzrik
+      email: wkuhn@example.net
+      password: 'wpx_Wh?5k4K'
+      user_type: medical_facility
+      whatsapp_number: est
     fileParameters:
       image: null
     responses: []
@@ -241,14 +241,14 @@ endpoints:
         name: facility
         description: ''
         required: true
-        example: et
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      facility: et
+      facility: qui
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -256,7 +256,7 @@ endpoints:
         name: name
         description: 'Must be at least 4 characters.'
         required: true
-        example: wyzpktddjgwjwdmifvt
+        example: xetxiuduynzlkbjiibseprbbsqrxhvovwwezcbmswzbzziacyqtofyynvvemnuzqimbyombk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -266,7 +266,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: sylvan72@example.com
+        example: sveum@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -276,7 +276,7 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: '?,xpG_&!a(^wv[)Ed%3'
+        example: "*Yn'f/b2"
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -286,7 +286,7 @@ endpoints:
         name: user_type
         description: ''
         required: true
-        example: medical_facility
+        example: finder
         type: string
         enumValues:
           - finder
@@ -298,7 +298,7 @@ endpoints:
         name: whatsapp_number
         description: 'Must not be greater than 12 characters.'
         required: true
-        example: l
+        example: yz
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -318,7 +318,7 @@ endpoints:
         name: address
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: eltytnih
+        example: galx
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -328,7 +328,7 @@ endpoints:
         name: description
         description: ''
         required: true
-        example: 'Inventore esse occaecati blanditiis.'
+        example: 'Temporibus dolor nulla dolorem aut omnis et.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -338,7 +338,7 @@ endpoints:
         name: emergency_contact
         description: 'Must not be greater than 12 characters.'
         required: false
-        example: vu
+        example: mgvrygy
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -348,7 +348,7 @@ endpoints:
         name: google_map_url
         description: ''
         required: false
-        example: 'https://www.grady.com/voluptatem-est-repellendus-quis-ducimus-iste-tenetur-et'
+        example: 'http://www.collier.info/consequatur-natus-quo-fugiat-exercitationem-earum-est-natus.html'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -369,7 +369,7 @@ endpoints:
         name: status
         description: ''
         required: true
-        example: active
+        example: inactive
         type: string
         enumValues:
           - active
@@ -405,7 +405,7 @@ endpoints:
         name: 'operating_hours[].day'
         description: ''
         required: true
-        example: sunday
+        example: tuesday
         type: string
         enumValues:
           - monday
@@ -422,7 +422,7 @@ endpoints:
         name: 'operating_hours[].open'
         description: 'Must be a valid date in the format <code>H:i</code>.'
         required: true
-        example: '08:59'
+        example: '10:20'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -432,28 +432,28 @@ endpoints:
         name: 'operating_hours[].close'
         description: 'Must be a valid date in the format <code>H:i</code>.'
         required: true
-        example: '08:59'
+        example: '10:20'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: wyzpktddjgwjwdmifvt
-      email: sylvan72@example.com
-      password: '?,xpG_&!a(^wv[)Ed%3'
-      user_type: medical_facility
-      whatsapp_number: l
-      address: eltytnih
-      description: 'Inventore esse occaecati blanditiis.'
-      emergency_contact: vu
-      google_map_url: 'https://www.grady.com/voluptatem-est-repellendus-quis-ducimus-iste-tenetur-et'
+      name: xetxiuduynzlkbjiibseprbbsqrxhvovwwezcbmswzbzziacyqtofyynvvemnuzqimbyombk
+      email: sveum@example.com
+      password: "*Yn'f/b2"
+      user_type: finder
+      whatsapp_number: yz
+      address: galx
+      description: 'Temporibus dolor nulla dolorem aut omnis et.'
+      emergency_contact: mgvrygy
+      google_map_url: 'http://www.collier.info/consequatur-natus-quo-fugiat-exercitationem-earum-est-natus.html'
       operating_hours:
         -
-          day: sunday
-          open: '08:59'
-          close: '08:59'
-      status: active
+          day: tuesday
+          open: '10:20'
+          close: '10:20'
+      status: inactive
       category: 'Health Care'
     fileParameters:
       image: null
@@ -485,14 +485,14 @@ endpoints:
         name: facility_id
         description: 'The ID of the facility.'
         required: true
-        example: 1
+        example: 12
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      facility_id: 1
+      facility_id: 12
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -569,7 +569,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: rm
+        example: ebkxbnvooqi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -579,7 +579,7 @@ endpoints:
         name: description
         description: ''
         required: true
-        example: 'Veniam quia ipsam est.'
+        example: 'Adipisci possimus corrupti provident ut et eos deserunt.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -589,7 +589,7 @@ endpoints:
         name: status
         description: ''
         required: true
-        example: active
+        example: inactive
         type: string
         enumValues:
           - active
@@ -598,9 +598,9 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: rm
-      description: 'Veniam quia ipsam est.'
-      status: active
+      name: ebkxbnvooqi
+      description: 'Adipisci possimus corrupti provident ut et eos deserunt.'
+      status: inactive
     fileParameters: []
     responses: []
     responseFields: []
@@ -630,14 +630,14 @@ endpoints:
         name: id
         description: 'The ID of the unit.'
         required: true
-        example: 1
+        example: 14
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 14
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -681,14 +681,14 @@ endpoints:
         name: id
         description: 'The ID of the unit.'
         required: true
-        example: 1
+        example: 12
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 12
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -696,7 +696,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: mokaglgh
+        example: wc
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -706,7 +706,7 @@ endpoints:
         name: description
         description: ''
         required: true
-        example: 'Nulla et molestiae rerum esse repudiandae pariatur.'
+        example: 'Vel aperiam optio hic nihil accusantium repudiandae eveniet.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -716,7 +716,7 @@ endpoints:
         name: status
         description: ''
         required: true
-        example: inactive
+        example: active
         type: string
         enumValues:
           - active
@@ -725,9 +725,9 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: mokaglgh
-      description: 'Nulla et molestiae rerum esse repudiandae pariatur.'
-      status: inactive
+      name: wc
+      description: 'Vel aperiam optio hic nihil accusantium repudiandae eveniet.'
+      status: active
     fileParameters: []
     responses: []
     responseFields: []
@@ -757,14 +757,14 @@ endpoints:
         name: id
         description: 'The ID of the unit.'
         required: true
-        example: 1
+        example: 13
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 13
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -802,14 +802,14 @@ endpoints:
         name: query
         description: 'Must be at least 2 characters.'
         required: true
-        example: qyrxobdnxppgmxprcjgmidcmesebrcmstxrbvxqtfawnhdhewfcasswrure
+        example: cejybdbrycajlzcexmyghbkuofopzjjcqipuehlgpcpobyrmgbprtenqotzyetvd
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      query: qyrxobdnxppgmxprcjgmidcmesebrcmstxrbvxqtfawnhdhewfcasswrure
+      query: cejybdbrycajlzcexmyghbkuofopzjjcqipuehlgpcpobyrmgbprtenqotzyetvd
     fileParameters: []
     responses:
       -
@@ -853,7 +853,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"user":{"id":1,"name":"just another namer","email":"solidarityalth@gmail.com","whatsapp_number":"678906700","user_type":"medical_facility","image":"\/storage\/users\/HraS3xvl5KGsDow5LMS60lSVCIFSVJSFmoYqYhUd.png","medical_facility":{"id":1,"address":"malingo","category":"Pharmacy","emergency_contact":null,"google_map_url":"46XP+CRV, Buea, Kamerun","description":"solidaririty health and clinic","operating_hours":"\"Mon-Fri: 8 AM - 6 PM, Sat: 9 AM - 1 PM\"","status":"Open","units":["maternity","pediatry"],"created_at":"2025-02-27T13:17:08.000000Z","updated_at":"2025-02-27T13:20:23.000000Z"}}},{"user":{"id":17,"name":"Mr. Joe Purdy","email":"bill75@example.org","whatsapp_number":"2480754743","user_type":"medical_facility","medical_facility":{"id":2,"address":"711 Willa Expressway Suite 098\nErwinfurt, MO 60337-9381","category":"Clinic","emergency_contact":"6088685275","google_map_url":"https:\/\/maps.google.com\/?q=72.341438,-168.254468","description":"Excepturi occaecati qui voluptatibus aspernatur ipsum et. Facere fugiat rerum dolorem odit. Consectetur necessitatibus qui tempore.","operating_hours":"{\"monday\":[\"09:00 AM - 05:00 PM\"],\"tuesday\":[\"09:00 AM - 05:00 PM\"],\"wednesday\":[\"09:00 AM - 05:00 PM\"],\"thursday\":[\"09:00 AM - 05:00 PM\"],\"friday\":[\"09:00 AM - 05:00 PM\"],\"saturday\":[\"10:00 AM - 02:00 PM\"],\"sunday\":[\"Closed\"]}","status":"Closed","units":"[\"Emergency\",\"Surgery\",\"Obstetrics & Gynecology\"]","created_at":"2025-02-27T13:30:31.000000Z","updated_at":"2025-02-27T13:30:31.000000Z"}}},{"user":{"id":18,"name":"Adeline Willms","email":"oda.gleason@example.org","whatsapp_number":"6359124515","user_type":"medical_facility","medical_facility":{"id":3,"address":"3397 Schimmel Pines\nWest Murl, HI 91805-4727","category":"Health Care","emergency_contact":"3062303385","google_map_url":"https:\/\/maps.google.com\/?q=73.60388,136.932569","description":"Dolores sapiente ipsam beatae minus voluptatem quisquam accusamus. Est temporibus officiis repellendus quas hic quia. Excepturi aut sequi suscipit voluptate. Eius accusantium totam deleniti aut illum eveniet veritatis.","operating_hours":"{\"monday\":[\"09:00 AM - 05:00 PM\"],\"tuesday\":[\"09:00 AM - 05:00 PM\"],\"wednesday\":[\"09:00 AM - 05:00 PM\"],\"thursday\":[\"09:00 AM - 05:00 PM\"],\"friday\":[\"09:00 AM - 05:00 PM\"],\"saturday\":[\"10:00 AM - 02:00 PM\"],\"sunday\":[\"Closed\"]}","status":"Closed","units":"[\"General Medicine\",\"Pediatrics\",\"Cardiology\"]","created_at":"2025-02-27T13:30:31.000000Z","updated_at":"2025-02-27T13:30:31.000000Z"}}},{"user":{"id":19,"name":"Jace Kozey","email":"choppe@example.net","whatsapp_number":"4430939821","user_type":"medical_facility","medical_facility":{"id":4,"address":"707 Cortez Corner\nDoyleport, UT 61533-0026","category":"Pharmacy","emergency_contact":"3835601827","google_map_url":"https:\/\/maps.google.com\/?q=-34.069859,117.21142","description":"Aliquid et voluptate ipsam eius velit culpa. Porro ut nisi voluptatem porro qui molestiae. Est ut officia est fugiat cumque sint.","operating_hours":"{\"monday\":[\"09:00 AM - 05:00 PM\"],\"tuesday\":[\"09:00 AM - 05:00 PM\"],\"wednesday\":[\"09:00 AM - 05:00 PM\"],\"thursday\":[\"09:00 AM - 05:00 PM\"],\"friday\":[\"09:00 AM - 05:00 PM\"],\"saturday\":[\"10:00 AM - 02:00 PM\"],\"sunday\":[\"Closed\"]}","status":"Open","units":"[\"General Medicine\",\"Pediatrics\",\"Cardiology\"]","created_at":"2025-02-27T13:30:31.000000Z","updated_at":"2025-02-27T13:30:31.000000Z"}}},{"user":{"id":20,"name":"Jonas Abbott","email":"elvis.moore@example.org","whatsapp_number":"6597831821","user_type":"medical_facility","medical_facility":{"id":5,"address":"734 Windler Underpass\nEast Constanceville, WV 69404","category":"Health Care","emergency_contact":"1840208318","google_map_url":"https:\/\/maps.google.com\/?q=72.58394,-124.37096","description":"Doloribus quis amet minus facilis. Quidem rerum ducimus animi accusantium ex adipisci dolores reiciendis. Iure culpa enim vero sunt sed. Quod quia error iste hic id voluptas.","operating_hours":"{\"monday\":[\"09:00 AM - 05:00 PM\"],\"tuesday\":[\"09:00 AM - 05:00 PM\"],\"wednesday\":[\"09:00 AM - 05:00 PM\"],\"thursday\":[\"09:00 AM - 05:00 PM\"],\"friday\":[\"09:00 AM - 05:00 PM\"],\"saturday\":[\"10:00 AM - 02:00 PM\"],\"sunday\":[\"Closed\"]}","status":"Open","units":"[\"Emergency\",\"Surgery\",\"Obstetrics & Gynecology\"]","created_at":"2025-02-27T13:30:31.000000Z","updated_at":"2025-02-27T13:30:31.000000Z"}}},{"user":{"id":21,"name":"Ms. Jackeline Schulist","email":"bud37@example.com","whatsapp_number":"8575100081","user_type":"medical_facility","medical_facility":{"id":6,"address":"6639 Ritchie Streets Suite 585\nPort Electa, WV 92260-3084","category":"Health Care","emergency_contact":"6383815363","google_map_url":"https:\/\/maps.google.com\/?q=-40.848466,67.737368","description":"Nihil voluptatum necessitatibus voluptate ea. Et quaerat saepe dignissimos libero corporis cupiditate ut. Qui corrupti delectus dolorem qui consequuntur. Debitis qui est corrupti.","operating_hours":"{\"monday\":[\"09:00 AM - 05:00 PM\"],\"tuesday\":[\"09:00 AM - 05:00 PM\"],\"wednesday\":[\"09:00 AM - 05:00 PM\"],\"thursday\":[\"09:00 AM - 05:00 PM\"],\"friday\":[\"09:00 AM - 05:00 PM\"],\"saturday\":[\"10:00 AM - 02:00 PM\"],\"sunday\":[\"Closed\"]}","status":"Closed","units":"[\"Emergency\",\"Surgery\",\"Obstetrics & Gynecology\"]","created_at":"2025-02-27T13:30:31.000000Z","updated_at":"2025-02-27T13:30:31.000000Z"}}},{"user":{"id":22,"name":"Deven Thompson MD","email":"pedro.rolfson@example.net","whatsapp_number":"3361704933","user_type":"medical_facility","medical_facility":{"id":7,"address":"6775 Estella Well Suite 389\nNew Lou, VT 42005","category":"Pharmacy","emergency_contact":"4006296298","google_map_url":"https:\/\/maps.google.com\/?q=-60.676315,-33.251633","description":"Deleniti error a veniam dolores laboriosam maxime. Quam alias sequi atque doloribus voluptatibus quo dolor vero. Autem dolorum voluptates illo ipsam architecto.","operating_hours":"{\"monday\":[\"09:00 AM - 05:00 PM\"],\"tuesday\":[\"09:00 AM - 05:00 PM\"],\"wednesday\":[\"09:00 AM - 05:00 PM\"],\"thursday\":[\"09:00 AM - 05:00 PM\"],\"friday\":[\"09:00 AM - 05:00 PM\"],\"saturday\":[\"10:00 AM - 02:00 PM\"],\"sunday\":[\"Closed\"]}","status":"Closed","units":"[\"Orthopedics\",\"Neurology\",\"Dermatology\"]","created_at":"2025-02-27T13:30:31.000000Z","updated_at":"2025-02-27T13:30:31.000000Z"}}},{"user":{"id":23,"name":"Lupe Cassin","email":"ikuhn@example.com","whatsapp_number":"4689866851","user_type":"medical_facility","medical_facility":{"id":8,"address":"40664 Stiedemann Forks\nPort Bentonshire, PA 67302-4088","category":"Clinic","emergency_contact":"2863375505","google_map_url":"https:\/\/maps.google.com\/?q=57.954286,-18.414132","description":"Est et vero corrupti unde fugit expedita quas aut. Accusantium mollitia doloribus eum deserunt voluptatum. Laboriosam ipsum sunt beatae odio ut eos. Perferendis dignissimos deserunt fuga asperiores quas tenetur.","operating_hours":"{\"monday\":[\"09:00 AM - 05:00 PM\"],\"tuesday\":[\"09:00 AM - 05:00 PM\"],\"wednesday\":[\"09:00 AM - 05:00 PM\"],\"thursday\":[\"09:00 AM - 05:00 PM\"],\"friday\":[\"09:00 AM - 05:00 PM\"],\"saturday\":[\"10:00 AM - 02:00 PM\"],\"sunday\":[\"Closed\"]}","status":"Open","units":"[\"Emergency\",\"Surgery\",\"Obstetrics & Gynecology\"]","created_at":"2025-02-27T13:30:31.000000Z","updated_at":"2025-02-27T13:30:31.000000Z"}}},{"user":{"id":24,"name":"Eddie Moen","email":"smitham.marquise@example.org","whatsapp_number":"4697694753","user_type":"medical_facility","medical_facility":{"id":9,"address":"48253 Carter Turnpike Apt. 863\nNew Tony, ID 08530","category":"Health Care","emergency_contact":"5007154704","google_map_url":"https:\/\/maps.google.com\/?q=-66.729664,-72.723079","description":"Eum deserunt consequuntur cumque inventore hic. Quia qui et et. Excepturi quae molestias dolorem ut. Voluptate ipsa minus quaerat eum rerum laudantium. Id accusamus dolores qui ut.","operating_hours":"{\"monday\":[\"09:00 AM - 05:00 PM\"],\"tuesday\":[\"09:00 AM - 05:00 PM\"],\"wednesday\":[\"09:00 AM - 05:00 PM\"],\"thursday\":[\"09:00 AM - 05:00 PM\"],\"friday\":[\"09:00 AM - 05:00 PM\"],\"saturday\":[\"10:00 AM - 02:00 PM\"],\"sunday\":[\"Closed\"]}","status":"Open","units":"[\"Emergency\",\"Surgery\",\"Obstetrics & Gynecology\"]","created_at":"2025-02-27T13:30:31.000000Z","updated_at":"2025-02-27T13:30:31.000000Z"}}},{"user":{"id":25,"name":"Mr. Timothy Greenfelder","email":"romaine.kertzmann@example.org","whatsapp_number":"9754626553","user_type":"medical_facility","medical_facility":{"id":10,"address":"912 Parisian Tunnel Apt. 237\nAufderharton, CA 10496-7778","category":"Pharmacy","emergency_contact":"0068454899","google_map_url":"https:\/\/maps.google.com\/?q=-84.864911,-150.559836","description":"Amet occaecati eos maiores nesciunt enim sit id quis. Veniam laudantium corporis facere corporis atque architecto velit. Ut voluptate ad atque eos qui expedita itaque.","operating_hours":"{\"monday\":[\"09:00 AM - 05:00 PM\"],\"tuesday\":[\"09:00 AM - 05:00 PM\"],\"wednesday\":[\"09:00 AM - 05:00 PM\"],\"thursday\":[\"09:00 AM - 05:00 PM\"],\"friday\":[\"09:00 AM - 05:00 PM\"],\"saturday\":[\"10:00 AM - 02:00 PM\"],\"sunday\":[\"Closed\"]}","status":"Open","units":"[\"Orthopedics\",\"Neurology\",\"Dermatology\"]","created_at":"2025-02-27T13:30:31.000000Z","updated_at":"2025-02-27T13:30:31.000000Z"}}},{"user":{"id":26,"name":"Dr. Wilburn Conn Sr.","email":"dandre.quigley@example.net","whatsapp_number":"9188412747","user_type":"medical_facility","medical_facility":{"id":11,"address":"6065 Neva Haven Suite 697\nNew Kattieburgh, NC 18215","category":"Pharmacy","emergency_contact":"2770811795","google_map_url":"https:\/\/maps.google.com\/?q=22.890297,144.05356","description":"Fugiat et placeat delectus facilis. Ut est molestiae est libero vero est ullam. Voluptas maxime adipisci dolorum est fugiat dolorem excepturi exercitationem. Aut minus ea et et soluta.","operating_hours":"{\"monday\":[\"09:00 AM - 05:00 PM\"],\"tuesday\":[\"09:00 AM - 05:00 PM\"],\"wednesday\":[\"09:00 AM - 05:00 PM\"],\"thursday\":[\"09:00 AM - 05:00 PM\"],\"friday\":[\"09:00 AM - 05:00 PM\"],\"saturday\":[\"10:00 AM - 02:00 PM\"],\"sunday\":[\"Closed\"]}","status":"Closed","units":"[\"Ophthalmology\",\"ENT\",\"Psychiatry\"]","created_at":"2025-02-27T13:30:31.000000Z","updated_at":"2025-02-27T13:30:31.000000Z"}}},{"user":{"id":27,"name":"Ella Schamberger","email":"agibson@example.org","whatsapp_number":"6412536772","user_type":"medical_facility","medical_facility":{"id":12,"address":"858 Wolff Forest\nElseville, TN 90202","category":"Clinic","emergency_contact":"5091445826","google_map_url":"https:\/\/maps.google.com\/?q=-34.130693,-135.237117","description":"Veniam fugit dignissimos dolor quia doloribus sit. Incidunt natus assumenda expedita illo. Voluptate dolorem vel est. Expedita in quia repellendus dolor.","operating_hours":"{\"monday\":[\"09:00 AM - 05:00 PM\"],\"tuesday\":[\"09:00 AM - 05:00 PM\"],\"wednesday\":[\"09:00 AM - 05:00 PM\"],\"thursday\":[\"09:00 AM - 05:00 PM\"],\"friday\":[\"09:00 AM - 05:00 PM\"],\"saturday\":[\"10:00 AM - 02:00 PM\"],\"sunday\":[\"Closed\"]}","status":"Open","units":"[\"General Medicine\",\"Pediatrics\",\"Cardiology\"]","created_at":"2025-02-27T13:30:31.000000Z","updated_at":"2025-02-27T13:30:31.000000Z"}}},{"user":{"id":28,"name":"Dr. Lonzo Gutkowski II","email":"urutherford@example.net","whatsapp_number":"6488525847","user_type":"medical_facility","medical_facility":{"id":13,"address":"77388 Braden Forks Apt. 719\nRosannaborough, RI 70063-4761","category":"Health Care","emergency_contact":"6685188689","google_map_url":"https:\/\/maps.google.com\/?q=53.053595,-52.5509","description":"Ipsam voluptatem est adipisci sunt. Ex architecto esse non voluptatem sunt doloremque. Et fugiat iste corrupti illum.","operating_hours":"{\"monday\":[\"09:00 AM - 05:00 PM\"],\"tuesday\":[\"09:00 AM - 05:00 PM\"],\"wednesday\":[\"09:00 AM - 05:00 PM\"],\"thursday\":[\"09:00 AM - 05:00 PM\"],\"friday\":[\"09:00 AM - 05:00 PM\"],\"saturday\":[\"10:00 AM - 02:00 PM\"],\"sunday\":[\"Closed\"]}","status":"Open","units":"[\"Emergency\",\"Surgery\",\"Obstetrics & Gynecology\"]","created_at":"2025-02-27T13:30:31.000000Z","updated_at":"2025-02-27T13:30:31.000000Z"}}},{"user":{"id":29,"name":"Prof. Nestor Will","email":"ikirlin@example.com","whatsapp_number":"5394591168","user_type":"medical_facility","medical_facility":{"id":14,"address":"1752 Lemke Ferry Apt. 064\nRaymundoville, SC 14081","category":"Pharmacy","emergency_contact":"9412038639","google_map_url":"https:\/\/maps.google.com\/?q=-16.135606,63.177142","description":"Non vel eum atque omnis qui occaecati velit. Animi sit quia et et fuga sit sed.","operating_hours":"{\"monday\":[\"09:00 AM - 05:00 PM\"],\"tuesday\":[\"09:00 AM - 05:00 PM\"],\"wednesday\":[\"09:00 AM - 05:00 PM\"],\"thursday\":[\"09:00 AM - 05:00 PM\"],\"friday\":[\"09:00 AM - 05:00 PM\"],\"saturday\":[\"10:00 AM - 02:00 PM\"],\"sunday\":[\"Closed\"]}","status":"Open","units":"[\"Orthopedics\",\"Neurology\",\"Dermatology\"]","created_at":"2025-02-27T13:30:31.000000Z","updated_at":"2025-02-27T13:30:31.000000Z"}}},{"user":{"id":30,"name":"Ally Harris","email":"callie.anderson@example.net","whatsapp_number":"1572466286","user_type":"medical_facility","medical_facility":{"id":15,"address":"86659 Bernier Track Suite 783\nLake Raheem, NH 91411","category":"Clinic","emergency_contact":"0359429049","google_map_url":"https:\/\/maps.google.com\/?q=-65.951741,161.786747","description":"Earum et vitae ipsum explicabo praesentium laudantium. In officiis possimus error consequatur qui. Maxime sunt harum voluptatem et doloremque ad.","operating_hours":"{\"monday\":[\"09:00 AM - 05:00 PM\"],\"tuesday\":[\"09:00 AM - 05:00 PM\"],\"wednesday\":[\"09:00 AM - 05:00 PM\"],\"thursday\":[\"09:00 AM - 05:00 PM\"],\"friday\":[\"09:00 AM - 05:00 PM\"],\"saturday\":[\"10:00 AM - 02:00 PM\"],\"sunday\":[\"Closed\"]}","status":"Open","units":"[\"Ophthalmology\",\"ENT\",\"Psychiatry\"]","created_at":"2025-02-27T13:30:31.000000Z","updated_at":"2025-02-27T13:30:31.000000Z"}}}],"meta":{"total":16,"per_page":15,"current_page":1,"last_page":2}}'
+        content: '{"data":[],"meta":{"total":0,"per_page":15,"current_page":1,"last_page":1}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -887,14 +887,14 @@ endpoints:
         name: facility_id
         description: 'The ID of the facility.'
         required: true
-        example: 1
+        example: 11
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      facility_id: 1
+      facility_id: 11
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -902,8 +902,11 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"data":{"user":{"id":1,"name":"just another namer","email":"solidarityalth@gmail.com","whatsapp_number":"678906700","user_type":"medical_facility","image":"\/storage\/users\/HraS3xvl5KGsDow5LMS60lSVCIFSVJSFmoYqYhUd.png","medical_facility":{"id":1,"address":"malingo","category":"Pharmacy","emergency_contact":null,"google_map_url":"46XP+CRV, Buea, Kamerun","description":"solidaririty health and clinic","operating_hours":"\"Mon-Fri: 8 AM - 6 PM, Sat: 9 AM - 1 PM\"","status":"Open","units":["maternity","pediatry"],"created_at":"2025-02-27T13:17:08.000000Z","updated_at":"2025-02-27T13:20:23.000000Z"}}}}'
+        status: 404
+        content: |-
+          {
+              "message": "No query results for model [App\\Models\\MedicalFacility] 11"
+          }
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json

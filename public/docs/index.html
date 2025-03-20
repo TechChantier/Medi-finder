@@ -124,7 +124,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: March 7, 2025</li>
+        <li>Last updated: March 20, 2025</li>
     </ul>
 </div>
 
@@ -133,7 +133,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>https://rrn24.techchantier.site/Medi-finder/public/</code>
+    <strong>Base URL</strong>: <code>https://rrn24.techchantier.com/Medi-finder/public/</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -163,8 +163,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"ppagac@example.com\",
-    \"password\": \"-a!84msI-u62!&gt;0\"
+    \"email\": \"rath.gaston@example.org\",
+    \"password\": \"U7s@.dwZ&gt;a^\"
 }"
 </code></pre></div>
 
@@ -180,8 +180,8 @@ const headers = {
 };
 
 let body = {
-    "email": "ppagac@example.com",
-    "password": "-a!84msI-u62!&gt;0"
+    "email": "rath.gaston@example.org",
+    "password": "U7s@.dwZ&gt;a^"
 };
 
 fetch(url, {
@@ -270,10 +270,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-auth-login"
-               value="ppagac@example.com"
+               value="rath.gaston@example.org"
                data-component="body">
     <br>
-<p>Example: <code>ppagac@example.com</code></p>
+<p>Example: <code>rath.gaston@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -281,10 +281,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-auth-login"
-               value="-a!84msI-u62!>0"
+               value="U7s@.dwZ>a^"
                data-component="body">
     <br>
-<p>Example: <code>-a!84msI-u62!&gt;0</code></p>
+<p>Example: <code>U7s@.dwZ&gt;a^</code></p>
         </div>
         </form>
 
@@ -304,12 +304,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost/api/auth/register" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "name=ugrzgezoacgunpzfxt"\
-    --form "email=colt.runte@example.org"\
-    --form "password=a9&amp;)3m#uS~TFtBCdo^k"\
-    --form "user_type=finder"\
-    --form "whatsapp_number=at"\
-    --form "image=@/tmp/phpi3r76rqgk0breddKn3u" </code></pre></div>
+    --form "name=dfdamijvbapjmungzenahjpegzrik"\
+    --form "email=wkuhn@example.net"\
+    --form "password=wpx_Wh?5k4K"\
+    --form "user_type=medical_facility"\
+    --form "whatsapp_number=est"\
+    --form "image=@/tmp/phph2r33euanhkp20A2438" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -323,11 +323,11 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('name', 'ugrzgezoacgunpzfxt');
-body.append('email', 'colt.runte@example.org');
-body.append('password', 'a9&amp;)3m#uS~TFtBCdo^k');
-body.append('user_type', 'finder');
-body.append('whatsapp_number', 'at');
+body.append('name', 'dfdamijvbapjmungzenahjpegzrik');
+body.append('email', 'wkuhn@example.net');
+body.append('password', 'wpx_Wh?5k4K');
+body.append('user_type', 'medical_facility');
+body.append('whatsapp_number', 'est');
 body.append('image', document.querySelector('input[name="image"]').files[0]);
 
 fetch(url, {
@@ -416,10 +416,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-auth-register"
-               value="ugrzgezoacgunpzfxt"
+               value="dfdamijvbapjmungzenahjpegzrik"
                data-component="body">
     <br>
-<p>Must be at least 4 characters. Example: <code>ugrzgezoacgunpzfxt</code></p>
+<p>Must be at least 4 characters. Example: <code>dfdamijvbapjmungzenahjpegzrik</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -427,10 +427,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-auth-register"
-               value="colt.runte@example.org"
+               value="wkuhn@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>colt.runte@example.org</code></p>
+<p>Must be a valid email address. Example: <code>wkuhn@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -438,10 +438,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-auth-register"
-               value="a9&)3m#uS~TFtBCdo^k"
+               value="wpx_Wh?5k4K"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Example: <code>a9&amp;)3m#uS~TFtBCdo^k</code></p>
+<p>Must be at least 6 characters. Example: <code>wpx_Wh?5k4K</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>user_type</code></b>&nbsp;&nbsp;
@@ -449,10 +449,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="user_type"                data-endpoint="POSTapi-auth-register"
-               value="finder"
+               value="medical_facility"
                data-component="body">
     <br>
-<p>Example: <code>finder</code></p>
+<p>Example: <code>medical_facility</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>finder</code></li> <li><code>medical_facility</code></li></ul>
         </div>
@@ -462,10 +462,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="whatsapp_number"                data-endpoint="POSTapi-auth-register"
-               value="at"
+               value="est"
                data-component="body">
     <br>
-<p>Example: <code>at</code></p>
+<p>Example: <code>est</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
@@ -476,7 +476,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Example: <code>/tmp/phpi3r76rqgk0breddKn3u</code></p>
+<p>Must be an image. Example: <code>/tmp/phph2r33euanhkp20A2438</code></p>
         </div>
         </form>
 
@@ -725,29 +725,29 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/medical-facilities/et" \
+    "http://localhost/api/medical-facilities/qui" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "name=wyzpktddjgwjwdmifvt"\
-    --form "email=sylvan72@example.com"\
-    --form "password=?,xpG_&amp;!a(^wv[)Ed%3"\
-    --form "user_type=medical_facility"\
-    --form "whatsapp_number=l"\
-    --form "address=eltytnih"\
-    --form "description=Inventore esse occaecati blanditiis."\
-    --form "emergency_contact=vu"\
-    --form "google_map_url=https://www.grady.com/voluptatem-est-repellendus-quis-ducimus-iste-tenetur-et"\
-    --form "operating_hours[][day]=sunday"\
-    --form "operating_hours[][open]=08:59"\
-    --form "operating_hours[][close]=08:59"\
-    --form "status=active"\
+    --form "name=xetxiuduynzlkbjiibseprbbsqrxhvovwwezcbmswzbzziacyqtofyynvvemnuzqimbyombk"\
+    --form "email=sveum@example.com"\
+    --form "password=*Yn'f/b2"\
+    --form "user_type=finder"\
+    --form "whatsapp_number=yz"\
+    --form "address=galx"\
+    --form "description=Temporibus dolor nulla dolorem aut omnis et."\
+    --form "emergency_contact=mgvrygy"\
+    --form "google_map_url=http://www.collier.info/consequatur-natus-quo-fugiat-exercitationem-earum-est-natus.html"\
+    --form "operating_hours[][day]=tuesday"\
+    --form "operating_hours[][open]=10:20"\
+    --form "operating_hours[][close]=10:20"\
+    --form "status=inactive"\
     --form "category=Health Care"\
-    --form "image=@/tmp/phptvhvqnh3f5dt46rxst6" </code></pre></div>
+    --form "image=@/tmp/php0nepavj9vick6HpQ1oO" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/medical-facilities/et"
+    "http://localhost/api/medical-facilities/qui"
 );
 
 const headers = {
@@ -756,19 +756,19 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('name', 'wyzpktddjgwjwdmifvt');
-body.append('email', 'sylvan72@example.com');
-body.append('password', '?,xpG_&amp;!a(^wv[)Ed%3');
-body.append('user_type', 'medical_facility');
-body.append('whatsapp_number', 'l');
-body.append('address', 'eltytnih');
-body.append('description', 'Inventore esse occaecati blanditiis.');
-body.append('emergency_contact', 'vu');
-body.append('google_map_url', 'https://www.grady.com/voluptatem-est-repellendus-quis-ducimus-iste-tenetur-et');
-body.append('operating_hours[][day]', 'sunday');
-body.append('operating_hours[][open]', '08:59');
-body.append('operating_hours[][close]', '08:59');
-body.append('status', 'active');
+body.append('name', 'xetxiuduynzlkbjiibseprbbsqrxhvovwwezcbmswzbzziacyqtofyynvvemnuzqimbyombk');
+body.append('email', 'sveum@example.com');
+body.append('password', '*Yn'f/b2');
+body.append('user_type', 'finder');
+body.append('whatsapp_number', 'yz');
+body.append('address', 'galx');
+body.append('description', 'Temporibus dolor nulla dolorem aut omnis et.');
+body.append('emergency_contact', 'mgvrygy');
+body.append('google_map_url', 'http://www.collier.info/consequatur-natus-quo-fugiat-exercitationem-earum-est-natus.html');
+body.append('operating_hours[][day]', 'tuesday');
+body.append('operating_hours[][open]', '10:20');
+body.append('operating_hours[][close]', '10:20');
+body.append('status', 'inactive');
 body.append('category', 'Health Care');
 body.append('image', document.querySelector('input[name="image"]').files[0]);
 
@@ -858,10 +858,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="facility"                data-endpoint="PUTapi-medical-facilities--facility-"
-               value="et"
+               value="qui"
                data-component="url">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>qui</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -870,10 +870,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-medical-facilities--facility-"
-               value="wyzpktddjgwjwdmifvt"
+               value="xetxiuduynzlkbjiibseprbbsqrxhvovwwezcbmswzbzziacyqtofyynvvemnuzqimbyombk"
                data-component="body">
     <br>
-<p>Must be at least 4 characters. Example: <code>wyzpktddjgwjwdmifvt</code></p>
+<p>Must be at least 4 characters. Example: <code>xetxiuduynzlkbjiibseprbbsqrxhvovwwezcbmswzbzziacyqtofyynvvemnuzqimbyombk</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -881,10 +881,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="PUTapi-medical-facilities--facility-"
-               value="sylvan72@example.com"
+               value="sveum@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>sylvan72@example.com</code></p>
+<p>Must be a valid email address. Example: <code>sveum@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -892,10 +892,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="PUTapi-medical-facilities--facility-"
-               value="?,xpG_&!a(^wv[)Ed%3"
+               value="*Yn'f/b2"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Example: <code>?,xpG_&amp;!a(^wv[)Ed%3</code></p>
+<p>Must be at least 6 characters. Example: <code>*Yn'f/b2</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>user_type</code></b>&nbsp;&nbsp;
@@ -903,10 +903,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="user_type"                data-endpoint="PUTapi-medical-facilities--facility-"
-               value="medical_facility"
+               value="finder"
                data-component="body">
     <br>
-<p>Example: <code>medical_facility</code></p>
+<p>Example: <code>finder</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>finder</code></li> <li><code>medical_facility</code></li></ul>
         </div>
@@ -916,10 +916,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="whatsapp_number"                data-endpoint="PUTapi-medical-facilities--facility-"
-               value="l"
+               value="yz"
                data-component="body">
     <br>
-<p>Must not be greater than 12 characters. Example: <code>l</code></p>
+<p>Must not be greater than 12 characters. Example: <code>yz</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
@@ -930,7 +930,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Example: <code>/tmp/phptvhvqnh3f5dt46rxst6</code></p>
+<p>Must be an image. Example: <code>/tmp/php0nepavj9vick6HpQ1oO</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -938,10 +938,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="address"                data-endpoint="PUTapi-medical-facilities--facility-"
-               value="eltytnih"
+               value="galx"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>eltytnih</code></p>
+<p>Must not be greater than 255 characters. Example: <code>galx</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -949,10 +949,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-medical-facilities--facility-"
-               value="Inventore esse occaecati blanditiis."
+               value="Temporibus dolor nulla dolorem aut omnis et."
                data-component="body">
     <br>
-<p>Example: <code>Inventore esse occaecati blanditiis.</code></p>
+<p>Example: <code>Temporibus dolor nulla dolorem aut omnis et.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>emergency_contact</code></b>&nbsp;&nbsp;
@@ -960,10 +960,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="emergency_contact"                data-endpoint="PUTapi-medical-facilities--facility-"
-               value="vu"
+               value="mgvrygy"
                data-component="body">
     <br>
-<p>Must not be greater than 12 characters. Example: <code>vu</code></p>
+<p>Must not be greater than 12 characters. Example: <code>mgvrygy</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>google_map_url</code></b>&nbsp;&nbsp;
@@ -971,10 +971,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="google_map_url"                data-endpoint="PUTapi-medical-facilities--facility-"
-               value="https://www.grady.com/voluptatem-est-repellendus-quis-ducimus-iste-tenetur-et"
+               value="http://www.collier.info/consequatur-natus-quo-fugiat-exercitationem-earum-est-natus.html"
                data-component="body">
     <br>
-<p>Example: <code>https://www.grady.com/voluptatem-est-repellendus-quis-ducimus-iste-tenetur-et</code></p>
+<p>Example: <code>http://www.collier.info/consequatur-natus-quo-fugiat-exercitationem-earum-est-natus.html</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -991,10 +991,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="operating_hours.0.day"                data-endpoint="PUTapi-medical-facilities--facility-"
-               value="sunday"
+               value="tuesday"
                data-component="body">
     <br>
-<p>Example: <code>sunday</code></p>
+<p>Example: <code>tuesday</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>monday</code></li> <li><code>tuesday</code></li> <li><code>wednesday</code></li> <li><code>thursday</code></li> <li><code>friday</code></li> <li><code>saturday</code></li> <li><code>sunday</code></li></ul>
                     </div>
@@ -1004,10 +1004,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="operating_hours.0.open"                data-endpoint="PUTapi-medical-facilities--facility-"
-               value="08:59"
+               value="10:20"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>H:i</code>. Example: <code>08:59</code></p>
+<p>Must be a valid date in the format <code>H:i</code>. Example: <code>10:20</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>close</code></b>&nbsp;&nbsp;
@@ -1015,10 +1015,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="operating_hours.0.close"                data-endpoint="PUTapi-medical-facilities--facility-"
-               value="08:59"
+               value="10:20"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>H:i</code>. Example: <code>08:59</code></p>
+<p>Must be a valid date in the format <code>H:i</code>. Example: <code>10:20</code></p>
                     </div>
                                     </details>
         </div>
@@ -1028,10 +1028,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="PUTapi-medical-facilities--facility-"
-               value="active"
+               value="inactive"
                data-component="body">
     <br>
-<p>Example: <code>active</code></p>
+<p>Example: <code>inactive</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>active</code></li> <li><code>inactive</code></li> <li><code>pending</code></li></ul>
         </div>
@@ -1076,14 +1076,14 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/medical-facilities/1" \
+    "http://localhost/api/medical-facilities/12" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/medical-facilities/1"
+    "http://localhost/api/medical-facilities/12"
 );
 
 const headers = {
@@ -1176,10 +1176,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="facility_id"                data-endpoint="DELETEapi-medical-facilities--facility_id-"
-               value="1"
+               value="12"
                data-component="url">
     <br>
-<p>The ID of the facility. Example: <code>1</code></p>
+<p>The ID of the facility. Example: <code>12</code></p>
             </div>
                     </form>
 
@@ -1324,9 +1324,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"rm\",
-    \"description\": \"Veniam quia ipsam est.\",
-    \"status\": \"active\"
+    \"name\": \"ebkxbnvooqi\",
+    \"description\": \"Adipisci possimus corrupti provident ut et eos deserunt.\",
+    \"status\": \"inactive\"
 }"
 </code></pre></div>
 
@@ -1342,9 +1342,9 @@ const headers = {
 };
 
 let body = {
-    "name": "rm",
-    "description": "Veniam quia ipsam est.",
-    "status": "active"
+    "name": "ebkxbnvooqi",
+    "description": "Adipisci possimus corrupti provident ut et eos deserunt.",
+    "status": "inactive"
 };
 
 fetch(url, {
@@ -1433,10 +1433,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-units"
-               value="rm"
+               value="ebkxbnvooqi"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>rm</code></p>
+<p>Must not be greater than 255 characters. Example: <code>ebkxbnvooqi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1444,10 +1444,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-units"
-               value="Veniam quia ipsam est."
+               value="Adipisci possimus corrupti provident ut et eos deserunt."
                data-component="body">
     <br>
-<p>Example: <code>Veniam quia ipsam est.</code></p>
+<p>Example: <code>Adipisci possimus corrupti provident ut et eos deserunt.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -1455,10 +1455,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="POSTapi-units"
-               value="active"
+               value="inactive"
                data-component="body">
     <br>
-<p>Example: <code>active</code></p>
+<p>Example: <code>inactive</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>active</code></li> <li><code>inactive</code></li></ul>
         </div>
@@ -1477,14 +1477,14 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/units/1" \
+    --get "http://localhost/api/units/14" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/units/1"
+    "http://localhost/api/units/14"
 );
 
 const headers = {
@@ -1593,10 +1593,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-units--id-"
-               value="1"
+               value="14"
                data-component="url">
     <br>
-<p>The ID of the unit. Example: <code>1</code></p>
+<p>The ID of the unit. Example: <code>14</code></p>
             </div>
                     </form>
 
@@ -1613,20 +1613,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/units/1" \
+    "http://localhost/api/units/12" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"mokaglgh\",
-    \"description\": \"Nulla et molestiae rerum esse repudiandae pariatur.\",
-    \"status\": \"inactive\"
+    \"name\": \"wc\",
+    \"description\": \"Vel aperiam optio hic nihil accusantium repudiandae eveniet.\",
+    \"status\": \"active\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/units/1"
+    "http://localhost/api/units/12"
 );
 
 const headers = {
@@ -1635,9 +1635,9 @@ const headers = {
 };
 
 let body = {
-    "name": "mokaglgh",
-    "description": "Nulla et molestiae rerum esse repudiandae pariatur.",
-    "status": "inactive"
+    "name": "wc",
+    "description": "Vel aperiam optio hic nihil accusantium repudiandae eveniet.",
+    "status": "active"
 };
 
 fetch(url, {
@@ -1730,10 +1730,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-units--id-"
-               value="1"
+               value="12"
                data-component="url">
     <br>
-<p>The ID of the unit. Example: <code>1</code></p>
+<p>The ID of the unit. Example: <code>12</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -1742,10 +1742,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-units--id-"
-               value="mokaglgh"
+               value="wc"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>mokaglgh</code></p>
+<p>Must not be greater than 255 characters. Example: <code>wc</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1753,10 +1753,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-units--id-"
-               value="Nulla et molestiae rerum esse repudiandae pariatur."
+               value="Vel aperiam optio hic nihil accusantium repudiandae eveniet."
                data-component="body">
     <br>
-<p>Example: <code>Nulla et molestiae rerum esse repudiandae pariatur.</code></p>
+<p>Example: <code>Vel aperiam optio hic nihil accusantium repudiandae eveniet.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -1764,10 +1764,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="PUTapi-units--id-"
-               value="inactive"
+               value="active"
                data-component="body">
     <br>
-<p>Example: <code>inactive</code></p>
+<p>Example: <code>active</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>active</code></li> <li><code>inactive</code></li></ul>
         </div>
@@ -1786,14 +1786,14 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/units/1" \
+    "http://localhost/api/units/13" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/units/1"
+    "http://localhost/api/units/13"
 );
 
 const headers = {
@@ -1886,10 +1886,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-units--id-"
-               value="1"
+               value="13"
                data-component="url">
     <br>
-<p>The ID of the unit. Example: <code>1</code></p>
+<p>The ID of the unit. Example: <code>13</code></p>
             </div>
                     </form>
 
@@ -1910,7 +1910,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"query\": \"qyrxobdnxppgmxprcjgmidcmesebrcmstxrbvxqtfawnhdhewfcasswrure\"
+    \"query\": \"cejybdbrycajlzcexmyghbkuofopzjjcqipuehlgpcpobyrmgbprtenqotzyetvd\"
 }"
 </code></pre></div>
 
@@ -1926,7 +1926,7 @@ const headers = {
 };
 
 let body = {
-    "query": "qyrxobdnxppgmxprcjgmidcmesebrcmstxrbvxqtfawnhdhewfcasswrure"
+    "query": "cejybdbrycajlzcexmyghbkuofopzjjcqipuehlgpcpobyrmgbprtenqotzyetvd"
 };
 
 fetch(url, {
@@ -2037,10 +2037,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="query"                data-endpoint="GETapi-medical-facilities-search"
-               value="qyrxobdnxppgmxprcjgmidcmesebrcmstxrbvxqtfawnhdhewfcasswrure"
+               value="cejybdbrycajlzcexmyghbkuofopzjjcqipuehlgpcpobyrmgbprtenqotzyetvd"
                data-component="body">
     <br>
-<p>Must be at least 2 characters. Example: <code>qyrxobdnxppgmxprcjgmidcmesebrcmstxrbvxqtfawnhdhewfcasswrure</code></p>
+<p>Must be at least 2 characters. Example: <code>cejybdbrycajlzcexmyghbkuofopzjjcqipuehlgpcpobyrmgbprtenqotzyetvd</code></p>
         </div>
         </form>
 
@@ -2093,347 +2093,12 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;just another namer&quot;,
-                &quot;email&quot;: &quot;solidarityalth@gmail.com&quot;,
-                &quot;whatsapp_number&quot;: &quot;678906700&quot;,
-                &quot;user_type&quot;: &quot;medical_facility&quot;,
-                &quot;image&quot;: &quot;/storage/users/HraS3xvl5KGsDow5LMS60lSVCIFSVJSFmoYqYhUd.png&quot;,
-                &quot;medical_facility&quot;: {
-                    &quot;id&quot;: 1,
-                    &quot;address&quot;: &quot;malingo&quot;,
-                    &quot;category&quot;: &quot;Pharmacy&quot;,
-                    &quot;emergency_contact&quot;: null,
-                    &quot;google_map_url&quot;: &quot;46XP+CRV, Buea, Kamerun&quot;,
-                    &quot;description&quot;: &quot;solidaririty health and clinic&quot;,
-                    &quot;operating_hours&quot;: &quot;\&quot;Mon-Fri: 8 AM - 6 PM, Sat: 9 AM - 1 PM\&quot;&quot;,
-                    &quot;status&quot;: &quot;Open&quot;,
-                    &quot;units&quot;: [
-                        &quot;maternity&quot;,
-                        &quot;pediatry&quot;
-                    ],
-                    &quot;created_at&quot;: &quot;2025-02-27T13:17:08.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-02-27T13:20:23.000000Z&quot;
-                }
-            }
-        },
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 17,
-                &quot;name&quot;: &quot;Mr. Joe Purdy&quot;,
-                &quot;email&quot;: &quot;bill75@example.org&quot;,
-                &quot;whatsapp_number&quot;: &quot;2480754743&quot;,
-                &quot;user_type&quot;: &quot;medical_facility&quot;,
-                &quot;medical_facility&quot;: {
-                    &quot;id&quot;: 2,
-                    &quot;address&quot;: &quot;711 Willa Expressway Suite 098\nErwinfurt, MO 60337-9381&quot;,
-                    &quot;category&quot;: &quot;Clinic&quot;,
-                    &quot;emergency_contact&quot;: &quot;6088685275&quot;,
-                    &quot;google_map_url&quot;: &quot;https://maps.google.com/?q=72.341438,-168.254468&quot;,
-                    &quot;description&quot;: &quot;Excepturi occaecati qui voluptatibus aspernatur ipsum et. Facere fugiat rerum dolorem odit. Consectetur necessitatibus qui tempore.&quot;,
-                    &quot;operating_hours&quot;: &quot;{\&quot;monday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;tuesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;wednesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;thursday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;friday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;saturday\&quot;:[\&quot;10:00 AM - 02:00 PM\&quot;],\&quot;sunday\&quot;:[\&quot;Closed\&quot;]}&quot;,
-                    &quot;status&quot;: &quot;Closed&quot;,
-                    &quot;units&quot;: &quot;[\&quot;Emergency\&quot;,\&quot;Surgery\&quot;,\&quot;Obstetrics &amp; Gynecology\&quot;]&quot;,
-                    &quot;created_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;
-                }
-            }
-        },
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 18,
-                &quot;name&quot;: &quot;Adeline Willms&quot;,
-                &quot;email&quot;: &quot;oda.gleason@example.org&quot;,
-                &quot;whatsapp_number&quot;: &quot;6359124515&quot;,
-                &quot;user_type&quot;: &quot;medical_facility&quot;,
-                &quot;medical_facility&quot;: {
-                    &quot;id&quot;: 3,
-                    &quot;address&quot;: &quot;3397 Schimmel Pines\nWest Murl, HI 91805-4727&quot;,
-                    &quot;category&quot;: &quot;Health Care&quot;,
-                    &quot;emergency_contact&quot;: &quot;3062303385&quot;,
-                    &quot;google_map_url&quot;: &quot;https://maps.google.com/?q=73.60388,136.932569&quot;,
-                    &quot;description&quot;: &quot;Dolores sapiente ipsam beatae minus voluptatem quisquam accusamus. Est temporibus officiis repellendus quas hic quia. Excepturi aut sequi suscipit voluptate. Eius accusantium totam deleniti aut illum eveniet veritatis.&quot;,
-                    &quot;operating_hours&quot;: &quot;{\&quot;monday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;tuesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;wednesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;thursday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;friday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;saturday\&quot;:[\&quot;10:00 AM - 02:00 PM\&quot;],\&quot;sunday\&quot;:[\&quot;Closed\&quot;]}&quot;,
-                    &quot;status&quot;: &quot;Closed&quot;,
-                    &quot;units&quot;: &quot;[\&quot;General Medicine\&quot;,\&quot;Pediatrics\&quot;,\&quot;Cardiology\&quot;]&quot;,
-                    &quot;created_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;
-                }
-            }
-        },
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 19,
-                &quot;name&quot;: &quot;Jace Kozey&quot;,
-                &quot;email&quot;: &quot;choppe@example.net&quot;,
-                &quot;whatsapp_number&quot;: &quot;4430939821&quot;,
-                &quot;user_type&quot;: &quot;medical_facility&quot;,
-                &quot;medical_facility&quot;: {
-                    &quot;id&quot;: 4,
-                    &quot;address&quot;: &quot;707 Cortez Corner\nDoyleport, UT 61533-0026&quot;,
-                    &quot;category&quot;: &quot;Pharmacy&quot;,
-                    &quot;emergency_contact&quot;: &quot;3835601827&quot;,
-                    &quot;google_map_url&quot;: &quot;https://maps.google.com/?q=-34.069859,117.21142&quot;,
-                    &quot;description&quot;: &quot;Aliquid et voluptate ipsam eius velit culpa. Porro ut nisi voluptatem porro qui molestiae. Est ut officia est fugiat cumque sint.&quot;,
-                    &quot;operating_hours&quot;: &quot;{\&quot;monday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;tuesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;wednesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;thursday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;friday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;saturday\&quot;:[\&quot;10:00 AM - 02:00 PM\&quot;],\&quot;sunday\&quot;:[\&quot;Closed\&quot;]}&quot;,
-                    &quot;status&quot;: &quot;Open&quot;,
-                    &quot;units&quot;: &quot;[\&quot;General Medicine\&quot;,\&quot;Pediatrics\&quot;,\&quot;Cardiology\&quot;]&quot;,
-                    &quot;created_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;
-                }
-            }
-        },
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 20,
-                &quot;name&quot;: &quot;Jonas Abbott&quot;,
-                &quot;email&quot;: &quot;elvis.moore@example.org&quot;,
-                &quot;whatsapp_number&quot;: &quot;6597831821&quot;,
-                &quot;user_type&quot;: &quot;medical_facility&quot;,
-                &quot;medical_facility&quot;: {
-                    &quot;id&quot;: 5,
-                    &quot;address&quot;: &quot;734 Windler Underpass\nEast Constanceville, WV 69404&quot;,
-                    &quot;category&quot;: &quot;Health Care&quot;,
-                    &quot;emergency_contact&quot;: &quot;1840208318&quot;,
-                    &quot;google_map_url&quot;: &quot;https://maps.google.com/?q=72.58394,-124.37096&quot;,
-                    &quot;description&quot;: &quot;Doloribus quis amet minus facilis. Quidem rerum ducimus animi accusantium ex adipisci dolores reiciendis. Iure culpa enim vero sunt sed. Quod quia error iste hic id voluptas.&quot;,
-                    &quot;operating_hours&quot;: &quot;{\&quot;monday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;tuesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;wednesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;thursday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;friday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;saturday\&quot;:[\&quot;10:00 AM - 02:00 PM\&quot;],\&quot;sunday\&quot;:[\&quot;Closed\&quot;]}&quot;,
-                    &quot;status&quot;: &quot;Open&quot;,
-                    &quot;units&quot;: &quot;[\&quot;Emergency\&quot;,\&quot;Surgery\&quot;,\&quot;Obstetrics &amp; Gynecology\&quot;]&quot;,
-                    &quot;created_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;
-                }
-            }
-        },
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 21,
-                &quot;name&quot;: &quot;Ms. Jackeline Schulist&quot;,
-                &quot;email&quot;: &quot;bud37@example.com&quot;,
-                &quot;whatsapp_number&quot;: &quot;8575100081&quot;,
-                &quot;user_type&quot;: &quot;medical_facility&quot;,
-                &quot;medical_facility&quot;: {
-                    &quot;id&quot;: 6,
-                    &quot;address&quot;: &quot;6639 Ritchie Streets Suite 585\nPort Electa, WV 92260-3084&quot;,
-                    &quot;category&quot;: &quot;Health Care&quot;,
-                    &quot;emergency_contact&quot;: &quot;6383815363&quot;,
-                    &quot;google_map_url&quot;: &quot;https://maps.google.com/?q=-40.848466,67.737368&quot;,
-                    &quot;description&quot;: &quot;Nihil voluptatum necessitatibus voluptate ea. Et quaerat saepe dignissimos libero corporis cupiditate ut. Qui corrupti delectus dolorem qui consequuntur. Debitis qui est corrupti.&quot;,
-                    &quot;operating_hours&quot;: &quot;{\&quot;monday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;tuesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;wednesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;thursday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;friday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;saturday\&quot;:[\&quot;10:00 AM - 02:00 PM\&quot;],\&quot;sunday\&quot;:[\&quot;Closed\&quot;]}&quot;,
-                    &quot;status&quot;: &quot;Closed&quot;,
-                    &quot;units&quot;: &quot;[\&quot;Emergency\&quot;,\&quot;Surgery\&quot;,\&quot;Obstetrics &amp; Gynecology\&quot;]&quot;,
-                    &quot;created_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;
-                }
-            }
-        },
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 22,
-                &quot;name&quot;: &quot;Deven Thompson MD&quot;,
-                &quot;email&quot;: &quot;pedro.rolfson@example.net&quot;,
-                &quot;whatsapp_number&quot;: &quot;3361704933&quot;,
-                &quot;user_type&quot;: &quot;medical_facility&quot;,
-                &quot;medical_facility&quot;: {
-                    &quot;id&quot;: 7,
-                    &quot;address&quot;: &quot;6775 Estella Well Suite 389\nNew Lou, VT 42005&quot;,
-                    &quot;category&quot;: &quot;Pharmacy&quot;,
-                    &quot;emergency_contact&quot;: &quot;4006296298&quot;,
-                    &quot;google_map_url&quot;: &quot;https://maps.google.com/?q=-60.676315,-33.251633&quot;,
-                    &quot;description&quot;: &quot;Deleniti error a veniam dolores laboriosam maxime. Quam alias sequi atque doloribus voluptatibus quo dolor vero. Autem dolorum voluptates illo ipsam architecto.&quot;,
-                    &quot;operating_hours&quot;: &quot;{\&quot;monday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;tuesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;wednesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;thursday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;friday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;saturday\&quot;:[\&quot;10:00 AM - 02:00 PM\&quot;],\&quot;sunday\&quot;:[\&quot;Closed\&quot;]}&quot;,
-                    &quot;status&quot;: &quot;Closed&quot;,
-                    &quot;units&quot;: &quot;[\&quot;Orthopedics\&quot;,\&quot;Neurology\&quot;,\&quot;Dermatology\&quot;]&quot;,
-                    &quot;created_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;
-                }
-            }
-        },
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 23,
-                &quot;name&quot;: &quot;Lupe Cassin&quot;,
-                &quot;email&quot;: &quot;ikuhn@example.com&quot;,
-                &quot;whatsapp_number&quot;: &quot;4689866851&quot;,
-                &quot;user_type&quot;: &quot;medical_facility&quot;,
-                &quot;medical_facility&quot;: {
-                    &quot;id&quot;: 8,
-                    &quot;address&quot;: &quot;40664 Stiedemann Forks\nPort Bentonshire, PA 67302-4088&quot;,
-                    &quot;category&quot;: &quot;Clinic&quot;,
-                    &quot;emergency_contact&quot;: &quot;2863375505&quot;,
-                    &quot;google_map_url&quot;: &quot;https://maps.google.com/?q=57.954286,-18.414132&quot;,
-                    &quot;description&quot;: &quot;Est et vero corrupti unde fugit expedita quas aut. Accusantium mollitia doloribus eum deserunt voluptatum. Laboriosam ipsum sunt beatae odio ut eos. Perferendis dignissimos deserunt fuga asperiores quas tenetur.&quot;,
-                    &quot;operating_hours&quot;: &quot;{\&quot;monday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;tuesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;wednesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;thursday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;friday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;saturday\&quot;:[\&quot;10:00 AM - 02:00 PM\&quot;],\&quot;sunday\&quot;:[\&quot;Closed\&quot;]}&quot;,
-                    &quot;status&quot;: &quot;Open&quot;,
-                    &quot;units&quot;: &quot;[\&quot;Emergency\&quot;,\&quot;Surgery\&quot;,\&quot;Obstetrics &amp; Gynecology\&quot;]&quot;,
-                    &quot;created_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;
-                }
-            }
-        },
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 24,
-                &quot;name&quot;: &quot;Eddie Moen&quot;,
-                &quot;email&quot;: &quot;smitham.marquise@example.org&quot;,
-                &quot;whatsapp_number&quot;: &quot;4697694753&quot;,
-                &quot;user_type&quot;: &quot;medical_facility&quot;,
-                &quot;medical_facility&quot;: {
-                    &quot;id&quot;: 9,
-                    &quot;address&quot;: &quot;48253 Carter Turnpike Apt. 863\nNew Tony, ID 08530&quot;,
-                    &quot;category&quot;: &quot;Health Care&quot;,
-                    &quot;emergency_contact&quot;: &quot;5007154704&quot;,
-                    &quot;google_map_url&quot;: &quot;https://maps.google.com/?q=-66.729664,-72.723079&quot;,
-                    &quot;description&quot;: &quot;Eum deserunt consequuntur cumque inventore hic. Quia qui et et. Excepturi quae molestias dolorem ut. Voluptate ipsa minus quaerat eum rerum laudantium. Id accusamus dolores qui ut.&quot;,
-                    &quot;operating_hours&quot;: &quot;{\&quot;monday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;tuesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;wednesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;thursday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;friday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;saturday\&quot;:[\&quot;10:00 AM - 02:00 PM\&quot;],\&quot;sunday\&quot;:[\&quot;Closed\&quot;]}&quot;,
-                    &quot;status&quot;: &quot;Open&quot;,
-                    &quot;units&quot;: &quot;[\&quot;Emergency\&quot;,\&quot;Surgery\&quot;,\&quot;Obstetrics &amp; Gynecology\&quot;]&quot;,
-                    &quot;created_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;
-                }
-            }
-        },
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 25,
-                &quot;name&quot;: &quot;Mr. Timothy Greenfelder&quot;,
-                &quot;email&quot;: &quot;romaine.kertzmann@example.org&quot;,
-                &quot;whatsapp_number&quot;: &quot;9754626553&quot;,
-                &quot;user_type&quot;: &quot;medical_facility&quot;,
-                &quot;medical_facility&quot;: {
-                    &quot;id&quot;: 10,
-                    &quot;address&quot;: &quot;912 Parisian Tunnel Apt. 237\nAufderharton, CA 10496-7778&quot;,
-                    &quot;category&quot;: &quot;Pharmacy&quot;,
-                    &quot;emergency_contact&quot;: &quot;0068454899&quot;,
-                    &quot;google_map_url&quot;: &quot;https://maps.google.com/?q=-84.864911,-150.559836&quot;,
-                    &quot;description&quot;: &quot;Amet occaecati eos maiores nesciunt enim sit id quis. Veniam laudantium corporis facere corporis atque architecto velit. Ut voluptate ad atque eos qui expedita itaque.&quot;,
-                    &quot;operating_hours&quot;: &quot;{\&quot;monday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;tuesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;wednesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;thursday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;friday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;saturday\&quot;:[\&quot;10:00 AM - 02:00 PM\&quot;],\&quot;sunday\&quot;:[\&quot;Closed\&quot;]}&quot;,
-                    &quot;status&quot;: &quot;Open&quot;,
-                    &quot;units&quot;: &quot;[\&quot;Orthopedics\&quot;,\&quot;Neurology\&quot;,\&quot;Dermatology\&quot;]&quot;,
-                    &quot;created_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;
-                }
-            }
-        },
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 26,
-                &quot;name&quot;: &quot;Dr. Wilburn Conn Sr.&quot;,
-                &quot;email&quot;: &quot;dandre.quigley@example.net&quot;,
-                &quot;whatsapp_number&quot;: &quot;9188412747&quot;,
-                &quot;user_type&quot;: &quot;medical_facility&quot;,
-                &quot;medical_facility&quot;: {
-                    &quot;id&quot;: 11,
-                    &quot;address&quot;: &quot;6065 Neva Haven Suite 697\nNew Kattieburgh, NC 18215&quot;,
-                    &quot;category&quot;: &quot;Pharmacy&quot;,
-                    &quot;emergency_contact&quot;: &quot;2770811795&quot;,
-                    &quot;google_map_url&quot;: &quot;https://maps.google.com/?q=22.890297,144.05356&quot;,
-                    &quot;description&quot;: &quot;Fugiat et placeat delectus facilis. Ut est molestiae est libero vero est ullam. Voluptas maxime adipisci dolorum est fugiat dolorem excepturi exercitationem. Aut minus ea et et soluta.&quot;,
-                    &quot;operating_hours&quot;: &quot;{\&quot;monday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;tuesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;wednesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;thursday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;friday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;saturday\&quot;:[\&quot;10:00 AM - 02:00 PM\&quot;],\&quot;sunday\&quot;:[\&quot;Closed\&quot;]}&quot;,
-                    &quot;status&quot;: &quot;Closed&quot;,
-                    &quot;units&quot;: &quot;[\&quot;Ophthalmology\&quot;,\&quot;ENT\&quot;,\&quot;Psychiatry\&quot;]&quot;,
-                    &quot;created_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;
-                }
-            }
-        },
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 27,
-                &quot;name&quot;: &quot;Ella Schamberger&quot;,
-                &quot;email&quot;: &quot;agibson@example.org&quot;,
-                &quot;whatsapp_number&quot;: &quot;6412536772&quot;,
-                &quot;user_type&quot;: &quot;medical_facility&quot;,
-                &quot;medical_facility&quot;: {
-                    &quot;id&quot;: 12,
-                    &quot;address&quot;: &quot;858 Wolff Forest\nElseville, TN 90202&quot;,
-                    &quot;category&quot;: &quot;Clinic&quot;,
-                    &quot;emergency_contact&quot;: &quot;5091445826&quot;,
-                    &quot;google_map_url&quot;: &quot;https://maps.google.com/?q=-34.130693,-135.237117&quot;,
-                    &quot;description&quot;: &quot;Veniam fugit dignissimos dolor quia doloribus sit. Incidunt natus assumenda expedita illo. Voluptate dolorem vel est. Expedita in quia repellendus dolor.&quot;,
-                    &quot;operating_hours&quot;: &quot;{\&quot;monday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;tuesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;wednesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;thursday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;friday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;saturday\&quot;:[\&quot;10:00 AM - 02:00 PM\&quot;],\&quot;sunday\&quot;:[\&quot;Closed\&quot;]}&quot;,
-                    &quot;status&quot;: &quot;Open&quot;,
-                    &quot;units&quot;: &quot;[\&quot;General Medicine\&quot;,\&quot;Pediatrics\&quot;,\&quot;Cardiology\&quot;]&quot;,
-                    &quot;created_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;
-                }
-            }
-        },
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 28,
-                &quot;name&quot;: &quot;Dr. Lonzo Gutkowski II&quot;,
-                &quot;email&quot;: &quot;urutherford@example.net&quot;,
-                &quot;whatsapp_number&quot;: &quot;6488525847&quot;,
-                &quot;user_type&quot;: &quot;medical_facility&quot;,
-                &quot;medical_facility&quot;: {
-                    &quot;id&quot;: 13,
-                    &quot;address&quot;: &quot;77388 Braden Forks Apt. 719\nRosannaborough, RI 70063-4761&quot;,
-                    &quot;category&quot;: &quot;Health Care&quot;,
-                    &quot;emergency_contact&quot;: &quot;6685188689&quot;,
-                    &quot;google_map_url&quot;: &quot;https://maps.google.com/?q=53.053595,-52.5509&quot;,
-                    &quot;description&quot;: &quot;Ipsam voluptatem est adipisci sunt. Ex architecto esse non voluptatem sunt doloremque. Et fugiat iste corrupti illum.&quot;,
-                    &quot;operating_hours&quot;: &quot;{\&quot;monday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;tuesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;wednesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;thursday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;friday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;saturday\&quot;:[\&quot;10:00 AM - 02:00 PM\&quot;],\&quot;sunday\&quot;:[\&quot;Closed\&quot;]}&quot;,
-                    &quot;status&quot;: &quot;Open&quot;,
-                    &quot;units&quot;: &quot;[\&quot;Emergency\&quot;,\&quot;Surgery\&quot;,\&quot;Obstetrics &amp; Gynecology\&quot;]&quot;,
-                    &quot;created_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;
-                }
-            }
-        },
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 29,
-                &quot;name&quot;: &quot;Prof. Nestor Will&quot;,
-                &quot;email&quot;: &quot;ikirlin@example.com&quot;,
-                &quot;whatsapp_number&quot;: &quot;5394591168&quot;,
-                &quot;user_type&quot;: &quot;medical_facility&quot;,
-                &quot;medical_facility&quot;: {
-                    &quot;id&quot;: 14,
-                    &quot;address&quot;: &quot;1752 Lemke Ferry Apt. 064\nRaymundoville, SC 14081&quot;,
-                    &quot;category&quot;: &quot;Pharmacy&quot;,
-                    &quot;emergency_contact&quot;: &quot;9412038639&quot;,
-                    &quot;google_map_url&quot;: &quot;https://maps.google.com/?q=-16.135606,63.177142&quot;,
-                    &quot;description&quot;: &quot;Non vel eum atque omnis qui occaecati velit. Animi sit quia et et fuga sit sed.&quot;,
-                    &quot;operating_hours&quot;: &quot;{\&quot;monday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;tuesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;wednesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;thursday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;friday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;saturday\&quot;:[\&quot;10:00 AM - 02:00 PM\&quot;],\&quot;sunday\&quot;:[\&quot;Closed\&quot;]}&quot;,
-                    &quot;status&quot;: &quot;Open&quot;,
-                    &quot;units&quot;: &quot;[\&quot;Orthopedics\&quot;,\&quot;Neurology\&quot;,\&quot;Dermatology\&quot;]&quot;,
-                    &quot;created_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;
-                }
-            }
-        },
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 30,
-                &quot;name&quot;: &quot;Ally Harris&quot;,
-                &quot;email&quot;: &quot;callie.anderson@example.net&quot;,
-                &quot;whatsapp_number&quot;: &quot;1572466286&quot;,
-                &quot;user_type&quot;: &quot;medical_facility&quot;,
-                &quot;medical_facility&quot;: {
-                    &quot;id&quot;: 15,
-                    &quot;address&quot;: &quot;86659 Bernier Track Suite 783\nLake Raheem, NH 91411&quot;,
-                    &quot;category&quot;: &quot;Clinic&quot;,
-                    &quot;emergency_contact&quot;: &quot;0359429049&quot;,
-                    &quot;google_map_url&quot;: &quot;https://maps.google.com/?q=-65.951741,161.786747&quot;,
-                    &quot;description&quot;: &quot;Earum et vitae ipsum explicabo praesentium laudantium. In officiis possimus error consequatur qui. Maxime sunt harum voluptatem et doloremque ad.&quot;,
-                    &quot;operating_hours&quot;: &quot;{\&quot;monday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;tuesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;wednesday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;thursday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;friday\&quot;:[\&quot;09:00 AM - 05:00 PM\&quot;],\&quot;saturday\&quot;:[\&quot;10:00 AM - 02:00 PM\&quot;],\&quot;sunday\&quot;:[\&quot;Closed\&quot;]}&quot;,
-                    &quot;status&quot;: &quot;Open&quot;,
-                    &quot;units&quot;: &quot;[\&quot;Ophthalmology\&quot;,\&quot;ENT\&quot;,\&quot;Psychiatry\&quot;]&quot;,
-                    &quot;created_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-02-27T13:30:31.000000Z&quot;
-                }
-            }
-        }
-    ],
+    &quot;data&quot;: [],
     &quot;meta&quot;: {
-        &quot;total&quot;: 16,
+        &quot;total&quot;: 0,
         &quot;per_page&quot;: 15,
         &quot;current_page&quot;: 1,
-        &quot;last_page&quot;: 2
+        &quot;last_page&quot;: 1
     }
 }</code>
  </pre>
@@ -2522,14 +2187,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/medical-facilities/1" \
+    --get "http://localhost/api/medical-facilities/11" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/medical-facilities/1"
+    "http://localhost/api/medical-facilities/11"
 );
 
 const headers = {
@@ -2546,7 +2211,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-medical-facilities--facility_id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -2558,32 +2223,7 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: {
-        &quot;user&quot;: {
-            &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;just another namer&quot;,
-            &quot;email&quot;: &quot;solidarityalth@gmail.com&quot;,
-            &quot;whatsapp_number&quot;: &quot;678906700&quot;,
-            &quot;user_type&quot;: &quot;medical_facility&quot;,
-            &quot;image&quot;: &quot;/storage/users/HraS3xvl5KGsDow5LMS60lSVCIFSVJSFmoYqYhUd.png&quot;,
-            &quot;medical_facility&quot;: {
-                &quot;id&quot;: 1,
-                &quot;address&quot;: &quot;malingo&quot;,
-                &quot;category&quot;: &quot;Pharmacy&quot;,
-                &quot;emergency_contact&quot;: null,
-                &quot;google_map_url&quot;: &quot;46XP+CRV, Buea, Kamerun&quot;,
-                &quot;description&quot;: &quot;solidaririty health and clinic&quot;,
-                &quot;operating_hours&quot;: &quot;\&quot;Mon-Fri: 8 AM - 6 PM, Sat: 9 AM - 1 PM\&quot;&quot;,
-                &quot;status&quot;: &quot;Open&quot;,
-                &quot;units&quot;: [
-                    &quot;maternity&quot;,
-                    &quot;pediatry&quot;
-                ],
-                &quot;created_at&quot;: &quot;2025-02-27T13:17:08.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-02-27T13:20:23.000000Z&quot;
-            }
-        }
-    }
+    &quot;message&quot;: &quot;No query results for model [App\\Models\\MedicalFacility] 11&quot;
 }</code>
  </pre>
     </span>
@@ -2663,10 +2303,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="facility_id"                data-endpoint="GETapi-medical-facilities--facility_id-"
-               value="1"
+               value="11"
                data-component="url">
     <br>
-<p>The ID of the facility. Example: <code>1</code></p>
+<p>The ID of the facility. Example: <code>11</code></p>
             </div>
                     </form>
 
